@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: "test from Rev"),
+      home: const RevHome(title: "test from Rev"),
     );
   }
 }
@@ -46,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  
   Color getBoxColor(int boxNumber) {
     switch (boxNumber) {
       case 1:
