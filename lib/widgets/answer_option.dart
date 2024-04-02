@@ -21,7 +21,7 @@ class AnswerOption extends StatelessWidget {
         color: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
-          side: BorderSide(color: Colors.blue, width: 2),
+          side: BorderSide(color: Colors.blue, width: 1),
         ),
         child: ListTile(
           title: Text(

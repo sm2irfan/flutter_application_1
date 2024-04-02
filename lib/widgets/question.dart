@@ -1,40 +1,53 @@
 import 'package:flutter/material.dart';
 
 class QuestionTitle extends StatelessWidget {
-  const QuestionTitle({super.key});
+  final String quesTitle;
+
+  const QuestionTitle({required this.quesTitle});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 40,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(
-          color: Colors.blue,
-          width: 2,
-        ),
-        borderRadius: BorderRadius.circular(8),
+      // height: 40,
+      // decoration: BoxDecoration(
+      //   color: Colors.white,
+      //   border: Border.all(
+      //     color: Colors.blue,
+      //     width: 2,
+      //   ),
+      //   borderRadius: BorderRadius.circular(8),
+      // ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0), // adjust the padding as needed
+        child: Text(quesTitle),
       ),
+      // child: Text(quesTitle),
     );
   }
 }
 
 class QuestionText extends StatelessWidget {
-  const QuestionText({super.key});
+  final String quesText;
+
+  const QuestionText({required this.quesText});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 150,
+      // height: 150,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
           color: Colors.blue,
-          width: 2,
+          width: 1,
         ),
         borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0), // adjust the padding as needed
+        child: Text(quesText),
       ),
     );
   }
