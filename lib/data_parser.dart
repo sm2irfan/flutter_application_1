@@ -11,7 +11,7 @@ List<QuestionAnswerSetData> parseQuestionAnswerSets(
         .map((answerOption) => AnswerOptionData(
               answerPlace: answerOption['answerPlace'] as String,
               answerText: answerOption['answerText'] as String,
-              boxNumber: answerOption['boxNumber'] as double,
+              boxNumber: answerOption['boxNumber'] as String,
             ))
         .toList();
 
