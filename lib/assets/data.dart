@@ -14,7 +14,8 @@ final Map<String, dynamic> jsonData = {
     },
     {
       "questionTitle": "வினா இலக்கம்: 2",
-      "questionText": "What is the area of a square with side length 4?",
+      "questionText":
+          "ஒரு சதுரத்தின் பக்க நீளம் 4 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
       "answerOptions": [
         {"answerPlace": "A", "answerText": "8", "boxNumber": "2.1"},
         {"answerPlace": "B", "answerText": "12", "boxNumber": "2.2"},
@@ -33,56 +34,61 @@ final Map<String, dynamic> jsonData = {
     },
     {
       "questionTitle": "வினா இலக்கம்: 4",
-      "questionText": "Which is the tallest mountain in the world?",
+      "questionText":
+          "ஒரு வட்டத்தின் ஆரம் 7 ஆக இருக்கும்போது அதன் சுற்றளவு என்ன?",
       "answerOptions": [
-        {
-          "answerPlace": "A",
-          "answerText":
-              " added an isSelected parameter to the AnswerOption widget. When isSelected is true, the AnswerOption widget will have a yellow background color. You can pass the selectedAnswer variable to the isSelected parameter to indicate which answer option is selected",
-          "boxNumber": "4.1"
-        },
-        {"answerPlace": "B", "answerText": "K2", "boxNumber": "4.2"},
-        {"answerPlace": "C", "answerText": "Kangchenjunga", "boxNumber": "4.3"}
+        {"answerPlace": "A", "answerText": "14π", "boxNumber": "4.1"},
+        {"answerPlace": "B", "answerText": "22π", "boxNumber": "4.2"},
+        {"answerPlace": "C", "answerText": "44π", "boxNumber": "4.3"}
       ]
     },
     {
       "questionTitle": "வினா இலக்கம்: 5",
-      "questionText": "The Earth is flat.",
+      "questionText": "5 மற்றும் 12 ஆகிய இரண்டு எண்களின் கூட்டு என்ன?",
       "answerOptions": [
-        {"answerPlace": "A", "answerText": "True", "boxNumber": "5.1"},
-        {"answerPlace": "B", "answerText": "False", "boxNumber": "5.2"}
+        {"answerPlace": "A", "answerText": "17", "boxNumber": "5.1"},
+        {"answerPlace": "B", "answerText": "60", "boxNumber": "5.2"},
+        {"answerPlace": "C", "answerText": "30", "boxNumber": "5.3"}
       ]
     },
     {
       "questionTitle": "வினா இலக்கம்: 6",
-      "questionText":
-          "We create a list of QuestionAnswerSet objects and pass each object to the questioAnswerSet() method. We also update the AnswerOption widget to accept an isCorrect parameter and change the color based on whether the answer is correct or not. Finally, we update the selectAnswer() method to accept a boolean parameter to indicate whether the selected answer is correct or not.We create a list of QuestionAnswerSet objects and pass each object to the questioAnswerSet() method. We also update the AnswerOption widget to accept an isCorrect parameter and change the color based on whether the answer is correct or not. Finally, we update the selectAnswer() method to accept a boolean parameter to indicate whether the selected answer is correct or not.",
+      "questionText": "ஒரு முக்கோணத்தின் மூன்று கோணங்களின் மொத்தம் என்ன?",
       "answerOptions": [
-        {"answerPlace": "A", "answerText": "True", "boxNumber": "6.1"},
-        {"answerPlace": "B", "answerText": "False", "boxNumber": "6.2"}
+        {"answerPlace": "A", "answerText": "180°", "boxNumber": "6.1"},
+        {"answerPlace": "B", "answerText": "360°", "boxNumber": "6.2"},
+        {"answerPlace": "C", "answerText": "90°", "boxNumber": "6.3"}
       ]
     },
     {
       "questionTitle": "வினா இலக்கம்: 7",
-      "questionText": "Which animal is known for its long neck?",
+      "questionText":
+          "ஒரு கிலோகிராம் அரிசி மற்றும் ஒரு கிலோகிராம் இரும்பு எது பாரியது?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "அரிசி", "boxNumber": "7.1"},
+        {"answerPlace": "B", "answerText": "இரும்பு", "boxNumber": "7.2"},
+        {"answerPlace": "C", "answerText": "இரண்டும் ஒன்றே", "boxNumber": "7.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 8",
+      "questionText":
+          "ஒரு மணி நேரத்தில் ஒரு கார் 60 கிலோமீட்டர் செல்கிறது, அது 5 மணி நேரத்தில் எவ்வளவு தூரம் செல்லும்?",
       "answerOptions": [
         {
           "answerPlace": "A",
-          "answerText": "Elephant",
-          "boxNumber": "7.1",
-          "imageUrl": "[Image of Elephant]"
+          "answerText": "300 கிலோமீட்டர்",
+          "boxNumber": "8.1"
         },
         {
           "answerPlace": "B",
-          "answerText": "Giraffe",
-          "boxNumber": "7.2",
-          "imageUrl": "[Image of Giraffe]"
+          "answerText": "360 கிலோமீட்டர்",
+          "boxNumber": "8.2"
         },
         {
           "answerPlace": "C",
-          "answerText": "Lion",
-          "boxNumber": "7.3",
-          "imageUrl": "[Image of Lion]"
+          "answerText": "120 கிலோமீட்டர்",
+          "boxNumber": "8.3"
         }
       ]
     }
