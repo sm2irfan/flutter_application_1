@@ -25,11 +25,23 @@ final Map<String, dynamic> jsonData = {
     {
       "questionTitle": "வினா இலக்கம்: 3",
       "questionText":
-          "In this updated implementation, we added an isSelected parameter to the AnswerOption widget. When isSelected is true, the AnswerOption widget will have a yellow background color. You can pass the selectedAnswer variable to the isSelected parameter to indicate which answer option is selected.",
+          "ஒரு ரயில் மணிக்கு 60 கிலோமீட்டர் வேகத்தில் செல்கிறது. அது 3 மணி நேரத்தில் எவ்வளவு தூரம் செல்லும்?",
       "answerOptions": [
-        {"answerPlace": "A", "answerText": "Berlin", "boxNumber": "3.1"},
-        {"answerPlace": "B", "answerText": "Paris", "boxNumber": "3.2"},
-        {"answerPlace": "C", "answerText": "London", "boxNumber": "3.3"}
+        {
+          "answerPlace": "A",
+          "answerText": "120 கிலோமீட்டர்",
+          "boxNumber": "3.1"
+        },
+        {
+          "answerPlace": "B",
+          "answerText": "180 கிலோமீட்டர்",
+          "boxNumber": "3.2"
+        },
+        {
+          "answerPlace": "C",
+          "answerText": "240 கிலோமீட்டர்",
+          "boxNumber": "3.3"
+        }
       ]
     },
     {
@@ -90,6 +102,85 @@ final Map<String, dynamic> jsonData = {
           "answerText": "120 கிலோமீட்டர்",
           "boxNumber": "8.3"
         }
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 9",
+      "questionText": "இலங்கையின் தலைநகரம் எது?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "கொழும்பு", "boxNumber": "9.1"},
+        {"answerPlace": "B", "answerText": "கண்டி", "boxNumber": "9.2"},
+        {"answerPlace": "C", "answerText": "யாழ்ப்பாணம்", "boxNumber": "9.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 10",
+      "questionText": "இலங்கையின் மிக உயரமான மலை எது?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "பிதுரதலாகல", "boxNumber": "10.1"},
+        {"answerPlace": "B", "answerText": "கிரிபத்த", "boxNumber": "10.2"},
+        {"answerPlace": "C", "answerText": "adam's peak", "boxNumber": "10.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 11",
+      "questionText": "இலங்கையின் தேசிய மரம் எது?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "நாக மரம்", "boxNumber": "11.1"},
+        {"answerPlace": "B", "answerText": "பலா மரம்", "boxNumber": "11.2"},
+        {"answerPlace": "C", "answerText": "இல்லை", "boxNumber": "11.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 12",
+      "questionText": "இலங்கையின் தேசிய விலங்கு எது?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "யானை", "boxNumber": "12.1"},
+        {"answerPlace": "B", "answerText": "சிங்கம்", "boxNumber": "12.2"},
+        {"answerPlace": "C", "answerText": "இல்லை", "boxNumber": "12.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 13",
+      "questionText": "இலங்கையின் தேசிய பறவை எது?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "மயில்", "boxNumber": "13.1"},
+        {"answerPlace": "B", "answerText": "கொக்கு", "boxNumber": "13.2"},
+        {"answerPlace": "C", "answerText": "இல்லை", "boxNumber": "13.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 14",
+      "questionText":
+          "ஒரு பெட்டிக்குள் 3 சிவப்பு பந்துகள், 2 பச்சை பந்துகள் மற்றும் 1 நீல பந்து உள்ளன. கண்களை மூடிக்கொண்டு 2 பந்துகளை எடுத்தால், இரண்டும் சிவப்பு நிறத்தில் இருக்க வாய்ப்பு என்ன?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "1/3", "boxNumber": "14.1"},
+        {"answerPlace": "B", "answerText": "1/2", "boxNumber": "14.2"},
+        {"answerPlace": "C", "answerText": "1/4", "boxNumber": "14.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 15",
+      "questionText":
+          "ஒரு தொட்டியில் 5 லிட்டர் தண்ணீர் உள்ளது. ஒரு குழாய் நிமிடத்திற்கு 2 லிட்டர் தண்ணீரை நிரப்புகிறது. அந்த குழாய் தொட்டியை நிரப்ப எவ்வளவு நேரம் எடுக்கும்?",
+      "answerOptions": [
+        {
+          "answerPlace": "A",
+          "answerText": "2.5 மணி நேரம்",
+          "boxNumber": "15.1"
+        },
+        {"answerPlace": "B", "answerText": "2 மணி நேரம்", "boxNumber": "15.2"},
+        {"answerPlace": "C", "answerText": "3 மணி நேரம்", "boxNumber": "15.3"}
+      ]
+    },
+    {
+      "questionTitle": "வினா இலக்கம்: 16",
+      "questionText":
+          "ஒரு கடையில் ஒரு பொருளின் விலை ₹100. அந்த பொருளுக்கு 10% தள்ளுபடி வழங்கப்படுகிறது. தள்ளுபடிக்குப் பிறகு அந்த பொருளின் விலை என்ன?",
+      "answerOptions": [
+        {"answerPlace": "A", "answerText": "₹90", "boxNumber": "16.1"},
+        {"answerPlace": "B", "answerText": "₹80", "boxNumber": "16.2"},
+        {"answerPlace": "C", "answerText": "₹70", "boxNumber": "16.3"}
       ]
     }
   ]

@@ -6,9 +6,14 @@ import 'data_parser.dart'; // Import the data parser file
 
 // Main Home Screen
 class RevHome extends StatefulWidget {
-  const RevHome({super.key, required this.title});
+  const RevHome({
+    Key? key,
+    required this.title,
+    required this.questionAnswerSetDataList,
+  }) : super(key: key);
 
   final String title;
+  final List<QuestionAnswerSetData> questionAnswerSetDataList;
 
   @override
   State<RevHome> createState() => _RevHomeState();
@@ -21,8 +26,8 @@ class _RevHomeState extends State<RevHome> {
   @override
   void initState() {
     super.initState();
-    // Parse the JSON data and initialize the questionAnswerSetDataList
-    questionAnswerSetDataList = parseQuestionAnswerSets(jsonData);
+    // Assign the passed questionAnswerSetDataList to the local variable
+    questionAnswerSetDataList = widget.questionAnswerSetDataList;
   }
 
   @override
@@ -51,7 +56,7 @@ class _RevHomeState extends State<RevHome> {
           ],
         ),
       ),
-      drawer: const AppDrawer(),
+      endDrawer: const AppDrawer(),
     );
   }
 }
