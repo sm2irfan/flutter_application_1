@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/answer_option.dart';
 import 'widgets/question.dart';
-import 'assets/data.dart'; // Import the data file
-import 'data_parser.dart'; // Import the data parser file
 
 // Main Home Screen
 class RevHome extends StatefulWidget {
@@ -175,6 +173,10 @@ class AnswerOptionData {
     required this.answerText,
     required this.boxNumber,
   });
+  @override
+  String toString() {
+    return 'answerPlace: $answerPlace, answerText: $answerText, boxNumber: $boxNumber';
+  }
 }
 
 // Data class to hold the properties of QuestionAnswerSet
@@ -188,4 +190,9 @@ class QuestionAnswerSetData {
     required this.questionText,
     required this.answerOptions,
   });
+
+  @override
+  String toString() {
+    return 'QuestionTitle: $questionTitle, QuestionText: $questionText, AnswerOptions: $answerOptions';
+  }
 }

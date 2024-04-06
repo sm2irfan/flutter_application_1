@@ -1,9 +1,24 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'rev_1.dart';
-import 'assets/data.dart'; // Import the data file
 import 'data_parser.dart'; // Import the data parser file
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Load the list of files in the assets folder
+  final assetManifestJson = await rootBundle.loadString('AssetManifest.json');
+  final Map<String, dynamic> manifest = json.decode(assetManifestJson);
+  final List<String> assetNames = manifest.keys.toList();
+
+  // Filter only the files in the assets folder
+  final List<String> assetFiles =
+      assetNames.where((String key) => !key.endsWith('/')).toList();
+
+  // Print the list of asset files
+  print("assetFiles: $assetFiles");
   runApp(const MyApp());
 }
 
@@ -34,12 +49,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late List<QuestionAnswerSetData> questionAnswerSetDataList;
+  late List<QuestionAnswerSetData> questionAnswerSetDataListtt;
 
   @override
   void initState() {
     super.initState();
-    // Parse the JSON data and initialize the questionAnswerSetDataList
-    questionAnswerSetDataList = parseQuestionAnswerSets(jsonData);
+  }
+
+  Future<Map<String, dynamic>> readJsonFromAsset(String assetPath) async {
+    final jsonString =
+        await rootBundle.loadString(assetPath); // Load asset as string
+    return json.decode(jsonString); // Decode JSON string
   }
 
   @override
@@ -55,12 +75,16 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
+                final ajsonDataTT = await readJsonFromAsset('assets/data.json');
+                questionAnswerSetDataListtt =
+                    parseQuestionAnswerSets(ajsonDataTT);
                 // Navigate to the second screen using a named route.
                 MaterialPageRoute route = MaterialPageRoute(
                     builder: (context) => RevHome(
                           title: 'from first',
-                          questionAnswerSetDataList: questionAnswerSetDataList,
+                          questionAnswerSetDataList:
+                              questionAnswerSetDataListtt,
                         ));
                 Navigator.push(context, route);
               },
@@ -81,12 +105,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(height: 20), // Spacer between buttons
             ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
+                final ajsonDataTT = await readJsonFromAsset('assets/dataForSecond.json');
+                questionAnswerSetDataListtt =
+                    parseQuestionAnswerSets(ajsonDataTT);
                 // Navigate to the second screen using a named route.
                 MaterialPageRoute route = MaterialPageRoute(
                     builder: (context) => RevHome(
                           title: 'from first',
-                          questionAnswerSetDataList: questionAnswerSetDataList,
+                          questionAnswerSetDataList: questionAnswerSetDataListtt,
                         ));
                 Navigator.push(context, route);
               },
