@@ -4,26 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'rev_1.dart';
 import 'data_parser.dart'; // Import the data parser file
+import 'package:path_provider/path_provider.dart';
+import 'dart:io';
+import 'package:open_file/open_file.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Load the list of files in the assets folder
-  final assetManifestJson = await rootBundle.loadString('AssetManifest.json');
-  final Map<String, dynamic> manifest = json.decode(assetManifestJson);
-  final List<String> assetNames = manifest.keys.toList();
-
-  // Filter only the files in the assets folder
-  final List<String> assetFiles =
-      assetNames.where((String key) => !key.endsWith('/')).toList();
-
-  // Print the list of asset files
-  print("assetFiles: $assetFiles");
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +31,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -49,11 +41,97 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late List<QuestionAnswerSetData> questionAnswerSetDataList;
-  late List<QuestionAnswerSetData> questionAnswerSetDataListtt;
+  late bool isLoading = false;
+  late List<String> assetFiles = [
+    'assets/data.json',
+    'assets/dataForSecond.json',
+  ];
+  String _filePath = '';
+  late String externalFilePath;
+  // Load the data asynchronously
+  Future<void> _loadData(String asset) async {
+    final currentContext = context;
+    setState(() {
+      isLoading = true;
+    });
+    // Read the JSON data from the external file
+    final jsonData = await File(asset).readAsString();
+    final ajsonDataTT = json.decode(jsonData);
 
-  @override
-  void initState() {
-    super.initState();
+    // final ajsonDataTT = await readJsonFromAsset(asset);
+    questionAnswerSetDataList = parseQuestionAnswerSets(ajsonDataTT);
+    setState(() {
+      isLoading = false;
+    });
+
+    // Navigate to the second screen using a named route.
+    MaterialPageRoute route = MaterialPageRoute(
+      builder: (currentContext) => RevHome(
+        title: 'from first',
+        questionAnswerSetDataList: questionAnswerSetDataList,
+      ),
+    );
+    Navigator.push(currentContext, route);
+  }
+
+  Future<void> _saveToFile() async {
+    const String content = 'Hi this is for test new i am ithaar';
+
+    await Permission.storage.request();
+
+    // Get the external storage directory
+    final directory = await getExternalStorageDirectory();
+
+    final String filePath = '${directory?.path}/myy_file.txt';
+
+    print("filepath: $filePath");
+
+    // Write to the file
+    final File file = File(filePath);
+    await file.writeAsString(content);
+
+    setState(() {
+      _filePath = filePath;
+    });
+  }
+
+  Future<void> openFile() async {
+    final filePath = _filePath; // Assuming _filePath is the path to your file
+
+    if (filePath != null) {
+      print("file path: $filePath");
+      await OpenFile.open(filePath);
+    }
+  }
+
+  Future<void> openFileaa(String filePath) async {
+    if (filePath.isNotEmpty) {
+      print("Opening file: $filePath");
+      await OpenFile.open(filePath);
+    }
+  }
+
+  Future<String> _copyAssetFileToExternal(String assetPath) async {
+    // Request storage permission
+    await Permission.storage.request();
+
+    // Get the external storage directory
+    final directory = await getExternalStorageDirectory();
+
+    // Create a new file in the external storage directory
+    final String filePath = '${directory!.path}/${assetPath.split('/').last}';
+
+    // Read the asset file
+    final assetData = await rootBundle.load(assetPath);
+
+    // Write the asset data to the external file
+    final externalFile = File(filePath);
+    await externalFile.writeAsBytes(assetData.buffer.asUint8List(),
+        flush: true);
+
+    print("External file path: $filePath");
+
+    return filePath;
   }
 
   Future<Map<String, dynamic>> readJsonFromAsset(String assetPath) async {
@@ -74,64 +152,49 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () async {
-                final ajsonDataTT = await readJsonFromAsset('assets/data.json');
-                questionAnswerSetDataListtt =
-                    parseQuestionAnswerSets(ajsonDataTT);
-                // Navigate to the second screen using a named route.
-                MaterialPageRoute route = MaterialPageRoute(
-                    builder: (context) => RevHome(
-                          title: 'from first',
-                          questionAnswerSetDataList:
-                              questionAnswerSetDataListtt,
-                        ));
-                Navigator.push(context, route);
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(
-                    255, 197, 219, 236), // Background color
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Rounded corners
+            for (var asset in assetFiles)
+              ElevatedButton(
+                onPressed: isLoading
+                    ? null // Disable button if data is loading
+                    : () => _loadData(externalFilePath), // Load data on button press
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(
+                      255, 197, 219, 236), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), // Rounded corners
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 15, horizontal: 30), // Button padding
                 ),
-                padding: const EdgeInsets.symmetric(
-                    vertical: 15, horizontal: 30), // Button padding
+                child: Text(
+                  'fiele name: $asset', // Text to display in the button asset
+                  style: const TextStyle(
+                      fontSize: 12, color: Colors.black), // Text style
+                ),
               ),
-              child: const Text(
-                "In the provided code, this error is likely originating from the ElevatedButton.styleFrom method where you're trying to set the primary color. However, there's no parameter named primary in ElevatedButton.styleFrom.", // Text for the button
-                style:
-                    TextStyle(fontSize: 12, color: Colors.black), // Text style
-              ),
+            ElevatedButton(
+              onPressed: _saveToFile,
+              child: Text('Save File'),
             ),
-            const SizedBox(height: 20), // Spacer between buttons
+            ElevatedButton(
+              onPressed: openFile,
+              child: Text('Open File'),
+            ),
             ElevatedButton(
               onPressed: () async {
-                final ajsonDataTT = await readJsonFromAsset('assets/dataForSecond.json');
-                questionAnswerSetDataListtt =
-                    parseQuestionAnswerSets(ajsonDataTT);
-                // Navigate to the second screen using a named route.
-                MaterialPageRoute route = MaterialPageRoute(
-                    builder: (context) => RevHome(
-                          title: 'from first',
-                          questionAnswerSetDataList: questionAnswerSetDataListtt,
-                        ));
-                Navigator.push(context, route);
+                externalFilePath =
+                    await _copyAssetFileToExternal('assets/dataForSecond.json');
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(
-                    255, 172, 210, 241), // Background color
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), // Rounded corners
-                ),
-                padding: const EdgeInsets.symmetric(
-                    vertical: 15, horizontal: 30), // Button padding
-              ),
-              child: const Text(
-                "First Question In the provided code, this error is likely originating from the ElevatedButton.styleFrom method where you're trying to set the primary color. However, there's no parameter named primary in ElevatedButton.styleFrom.", // Text for the button
-                style:
-                    TextStyle(fontSize: 12, color: Colors.black), // Text style
-              ),
-            )
+              child: Text('Save dataForSecond.json'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await openFileaa(externalFilePath);
+              },
+              child: Text('Open dataForSecond.json'),
+            ),
+            if (isLoading) // Display circular progress indicator when loading
+              const CircularProgressIndicator(),
           ],
         ),
       ),

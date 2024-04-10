@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class QuestionTitle extends StatelessWidget {
   final String quesTitle;
 
-  const QuestionTitle({required this.quesTitle});
+  const QuestionTitle({super.key, required this.quesTitle});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       // height: 40,
       // decoration: BoxDecoration(
@@ -30,7 +30,7 @@ class QuestionTitle extends StatelessWidget {
 class QuestionText extends StatelessWidget {
   final String quesText;
 
-  const QuestionText({required this.quesText});
+  const QuestionText({super.key, required this.quesText});
 
   @override
   Widget build(BuildContext context) {

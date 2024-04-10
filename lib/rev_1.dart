@@ -5,10 +5,10 @@ import 'widgets/question.dart';
 // Main Home Screen
 class RevHome extends StatefulWidget {
   const RevHome({
-    Key? key,
+    super.key,
     required this.title,
     required this.questionAnswerSetDataList,
-  }) : super(key: key);
+  });
 
   final String title;
   final List<QuestionAnswerSetData> questionAnswerSetDataList;
