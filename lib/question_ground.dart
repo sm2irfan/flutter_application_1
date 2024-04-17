@@ -3,8 +3,8 @@ import 'widgets/answer_option.dart';
 import 'widgets/question.dart';
 
 // Main Home Screen
-class RevHome extends StatefulWidget {
-  const RevHome({
+class QuestionGround extends StatefulWidget {
+  const QuestionGround({
     super.key,
     required this.title,
     required this.questionAnswerSetDataList,
@@ -14,10 +14,10 @@ class RevHome extends StatefulWidget {
   final List<QuestionAnswerSetData> questionAnswerSetDataList;
 
   @override
-  State<RevHome> createState() => _RevHomeState();
+  State<QuestionGround> createState() => _QuestionGroundState();
 }
 
-class _RevHomeState extends State<RevHome> {
+class _QuestionGroundState extends State<QuestionGround> {
   late List<QuestionAnswerSetData> questionAnswerSetDataList;
   List<String> selectedAnswers = []; // Global list to store selected answers
 
@@ -40,7 +40,7 @@ class _RevHomeState extends State<RevHome> {
           children: <Widget>[
             // Loop through each QuestionAnswerSet data and create a QuestionAnswerSet widget
             for (var data in questionAnswerSetDataList)
-              QuestionAnswerSet(
+              SingleQuestionAnswerSet(
                 questionTitle: data.questionTitle,
                 questionText: data.questionText,
                 answerOptions: data.answerOptions,
@@ -51,6 +51,15 @@ class _RevHomeState extends State<RevHome> {
                   });
                 },
               ),
+            // Submit Button
+            ElevatedButton(
+              onPressed: () {
+                // Handle submit action here
+                // You can access selectedAnswers here to submit the data
+              },
+              child: Text('Submit'),
+            ),
+            const SizedBox(height: 8),
           ],
         ),
       ),
@@ -60,7 +69,7 @@ class _RevHomeState extends State<RevHome> {
 }
 
 // Widget to display a single QuestionAnswerSet
-class QuestionAnswerSet extends StatefulWidget {
+class SingleQuestionAnswerSet extends StatefulWidget {
   final String questionTitle;
   final String questionText;
   final List<AnswerOptionData> answerOptions;
@@ -68,7 +77,7 @@ class QuestionAnswerSet extends StatefulWidget {
   final void Function(List<String>)
       updateSelectedAnswers; // Function to update selectedAnswers
 
-  const QuestionAnswerSet({
+  const SingleQuestionAnswerSet({
     super.key,
     required this.questionTitle,
     required this.questionText,
@@ -78,10 +87,11 @@ class QuestionAnswerSet extends StatefulWidget {
   });
 
   @override
-  _QuestionAnswerSetState createState() => _QuestionAnswerSetState();
+  _SingleQuestionAnswerSetState createState() =>
+      _SingleQuestionAnswerSetState();
 }
 
-class _QuestionAnswerSetState extends State<QuestionAnswerSet> {
+class _SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
   String selectedAnswer = '';
   String extractValue = '';
   String internalValue = '';
