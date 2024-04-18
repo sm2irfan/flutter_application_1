@@ -7,6 +7,10 @@ import 'package:permission_handler/permission_handler.dart';
 import 'dart:convert';
 
 class FileUtils {
+  // static count variable
+  static int count = 0;
+  static bool isFileGetted = false;
+
   static Future<void> openFile(String filePath) async {
     if (filePath.isNotEmpty) {
       print("Opening file: $filePath");
@@ -14,7 +18,7 @@ class FileUtils {
     }
   }
 
-  static Future<List<String>> listFilesInDirectory() async {
+  static Future<List<String>> listFilesInDirectory(isNeedAnswer) async {
     // Get the external storage directory
     final directory = await getExternalStorageDirectory();
     if (directory == null) {
@@ -23,11 +27,30 @@ class FileUtils {
     }
 
     final List<FileSystemEntity> files = directory.listSync();
-    final List<String> filePaths = files.map((file) => file.path).toList();
+    List<String> filePaths = [];
+    if (isNeedAnswer) {
+      filePaths = files
+        .map((file) => file.path)
+        .where((path) => path.contains('_answer'))
+        .toList();
+    }
+    else {
+      filePaths = files
+        .map((file) => file.path)
+        .where((path) => !path.contains('_answer'))
+        .toList();
+    }
+    
+
+    for (var element in filePaths) {
+      print(element);
+    }
+    // isFileGetted = true;
     return filePaths;
   }
 
-  static Future<String> copyAssetFileToExternalIfNotExists(String assetPath) async {
+  static Future<String> copyAssetFileToExternalIfNotExists(
+      String assetPath) async {
     // Request storage permission
     await Permission.storage.request();
 
@@ -71,17 +94,16 @@ class FileUtils {
   }
 
   static Future<void> deleteFile(String filePath) async {
-  try {
-    final file = File(filePath);
-    if (await file.exists()) {
-      await file.delete();
-      print('File deleted successfully: $filePath');
-    } else {
-      print('File does not exist: $filePath');
+    try {
+      final file = File(filePath);
+      if (await file.exists()) {
+        await file.delete();
+        print('File deleted successfully: $filePath');
+      } else {
+        print('File does not exist: $filePath');
+      }
+    } catch (e) {
+      print('Error deleting file: $e');
     }
-  } catch (e) {
-    print('Error deleting file: $e');
   }
-  
-}
 }

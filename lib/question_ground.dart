@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/data_loader.dart';
 import 'widgets/answer_option.dart';
 import 'widgets/question.dart';
 
@@ -6,10 +7,12 @@ import 'widgets/question.dart';
 class QuestionGround extends StatefulWidget {
   const QuestionGround({
     super.key,
+    required this.filePath,
     required this.title,
     required this.questionAnswerSetDataList,
   });
 
+  final String filePath;
   final String title;
   final List<QuestionAnswerSetData> questionAnswerSetDataList;
 
@@ -26,6 +29,68 @@ class _QuestionGroundState extends State<QuestionGround> {
     super.initState();
     // Assign the passed questionAnswerSetDataList to the local variable
     questionAnswerSetDataList = widget.questionAnswerSetDataList;
+  }
+
+  void updateSelectedAnswers(List<String> selectedAnswers) {
+    setState(() {
+      this.selectedAnswers = selectedAnswers;
+    });
+  }
+
+  // Function to handle submit action
+
+  Future<void> handleSubmit() async {
+    // Append "_answer" to the filename
+    String modifiedPath = widget.filePath.replaceAll('.json', '_answer.json');
+    print("path: $modifiedPath");
+
+    // Use the DataLoader class to load the data
+    var answerSet = await DataLoader.loadData(modifiedPath);
+
+    print("selectedAnswers: $selectedAnswers");
+    print("answerSet: $answerSet");
+
+    // Convert lists to sets of double values for comparison
+    var selectedSet = selectedAnswers.map(double.parse).toSet();
+    var answerSetP = answerSet.cast<double>().toSet();
+
+    // Find the intersection of sets to get matching elements
+    var matchingSet = selectedSet.intersection(answerSetP);
+
+    print("Matching elements: $matchingSet");
+
+    // Get the count of matching elements
+    int matchingCount = matchingSet.length;
+
+    double calculatedScore = (matchingCount / answerSet.length) * 100;
+    int ceilingScore = calculatedScore.ceil().toInt();
+
+    print("Calculated Score: $calculatedScore");
+
+    print("Number of matching elements: $matchingCount");
+
+    showSubmitDialog(ceilingScore);
+  }
+
+  void showSubmitDialog(int calculatedScore) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Score: $calculatedScore'),
+          content: const Text('Don\'t slack off in your efforts...'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                // Handle saving to the app
+                Navigator.pushNamed(context, '/MyHomePage');
+              },
+              child: const Text('Done'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -53,11 +118,8 @@ class _QuestionGroundState extends State<QuestionGround> {
               ),
             // Submit Button
             ElevatedButton(
-              onPressed: () {
-                // Handle submit action here
-                // You can access selectedAnswers here to submit the data
-              },
-              child: Text('Submit'),
+              onPressed: handleSubmit,
+              child: const Text('Submit'),
             ),
             const SizedBox(height: 8),
           ],

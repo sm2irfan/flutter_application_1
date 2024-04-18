@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'question_ground.dart';
 // Import the data parser file
-import 'package:path_provider/path_provider.dart';
-import 'dart:io';
 import 'file_utils.dart'; // Import the file utilities
 import 'data_loader.dart'; // Import the data loader
 import 'exam_paper.dart';
@@ -24,6 +23,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: "test from Rev"),
+      routes: {
+        '/MyHomePage': (context) => const MyHomePage(title: "test from Rev"),
+      },
     );
   }
 }
@@ -48,19 +50,27 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    initializeAssets();
-    getAssetsFileNamesAndCopy();
+    if (!FileUtils.isFileGetted) {
+      getAssetsFileNamesAndCopy();
+      FileUtils.isFileGetted = true;
+    }
   }
 
+  // the initializeAssets method is being called indirectly
+  // through the FutureBuilder widget in the build method.
   Future<List<String>> initializeAssets() async {
-    final externalStorageFiles = await FileUtils.listFilesInDirectory();
+    var isNeedAnswer = false;
+    final externalStorageFiles =
+        await FileUtils.listFilesInDirectory(isNeedAnswer);
     // externalStorageFiles.forEach((element) {
     //   FileUtils.deleteFile(element);
     // });
+
     return externalStorageFiles;
   }
 
   Future<List<String>> getAssetsFileNamesAndCopy() async {
+    print('from getAssetsFileNamesAndCopy');
     final files = await FileUtils.getAssetsFileNames('assets/');
     for (var element in files) {
       FileUtils.copyAssetFileToExternalIfNotExists(element);
@@ -76,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     // Use the DataLoader class to load the data
-    questionAnswerSetDataList = await DataLoader.loadData(asset);
+    questionAnswerSetDataList = await DataLoader.loadDataAndParser(asset);
 
     setState(() {
       isLoading = false;
@@ -85,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // Navigate to the second screen using a named route.
     MaterialPageRoute route = MaterialPageRoute(
       builder: (currentContext) => QuestionGround(
+        filePath: asset,
         title: 'from first',
         questionAnswerSetDataList: questionAnswerSetDataList,
       ),
@@ -97,18 +108,18 @@ class _MyHomePageState extends State<MyHomePage> {
     await FileUtils.openFile(filePath);
   }
 
-  Future<List<String>> listFilesInDirectory() async {
-    // Get the external storage directory
-    final directory = await getExternalStorageDirectory();
-    if (directory == null) {
-      print("External storage directory not found.");
-      return [];
-    }
+  // Future<List<String>> listFilesInDirectory() async {
+  //   // Get the external storage directory
+  //   final directory = await getExternalStorageDirectory();
+  //   if (directory == null) {
+  //     print("External storage directory not found.");
+  //     return [];
+  //   }
 
-    final List<FileSystemEntity> files = directory.listSync();
-    final List<String> filePaths = files.map((file) => file.path).toList();
-    return filePaths;
-  }
+  //   final List<FileSystemEntity> files = directory.listSync();
+  //   final List<String> filePaths = files.map((file) => file.path).toList();
+  //   return filePaths;
+  // }
 
   void handleEdit(String asset) {
     print('Editing handleEdit');
@@ -141,26 +152,57 @@ class _MyHomePageState extends State<MyHomePage> {
             } else {
               // Assets loaded successfully
               externalStorageFiles = snapshot.data!;
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  for (var asset in externalStorageFiles)
-                    Padding(
-                      padding: const EdgeInsets.all(
-                          8.0), // Add vertical spacing of 8 units
-                      child: ExamPaper(
-                        buttonText: 'first semester question paper for $asset',
-                        onPressed: () => _loadData(asset),
-                        isLoading: isLoading,
-                        onEditPressed: () => handleEdit(asset),
-                        onResetPressed: () => handleReset(asset),
+              return SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    for (var asset in externalStorageFiles)
+                      Padding(
+                        padding: const EdgeInsets.all(
+                            8.0), // Add vertical spacing of 8 units
+                        child: ExamPaper(
+                          buttonText:
+                              'கடந்த கால வினாக்கள் 2023, இரண்டு மணித்தியால வினாக்கள்',
+                          onPressed: () => _loadData(asset),
+                          isLoading: isLoading,
+                          onEditPressed: () => handleEdit(asset),
+                          onResetPressed: () => handleReset(asset),
+                        ),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               );
             }
           },
         ),
+      ),
+      drawer: const Drawer(
+        // Add a drawer here
+        child: Column(children: <Widget>[
+          UserAccountsDrawerHeader(
+              accountName: Text('irfan'),
+              accountEmail: Text("irfan@gmail"),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Text(
+                  'hi ',
+                ),
+              )),
+          ListTile(
+            title: Text("pass peper"),
+            leading: Icon(Icons.check),
+          ),
+          Divider(
+            height: 5,
+          ),
+          ListTile(
+            title: Text("pass peper 2"),
+            leading: Icon(Icons.check),
+          ),
+          Divider(
+            height: 5,
+          )
+        ]),
       ),
     );
   }
