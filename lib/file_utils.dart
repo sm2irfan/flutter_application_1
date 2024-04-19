@@ -18,7 +18,7 @@ class FileUtils {
     }
   }
 
-  static Future<List<String>> listFilesInDirectory(isNeedAnswer) async {
+  static Future<List<String>> listFilesInDirectory() async {
     // Get the external storage directory
     final directory = await getExternalStorageDirectory();
     if (directory == null) {
@@ -28,19 +28,10 @@ class FileUtils {
 
     final List<FileSystemEntity> files = directory.listSync();
     List<String> filePaths = [];
-    if (isNeedAnswer) {
-      filePaths = files
-        .map((file) => file.path)
-        .where((path) => path.contains('_answer'))
-        .toList();
-    }
-    else {
-      filePaths = files
+    filePaths = files
         .map((file) => file.path)
         .where((path) => !path.contains('_answer'))
         .toList();
-    }
-    
 
     for (var element in filePaths) {
       print(element);

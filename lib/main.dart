@@ -50,18 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    if (!FileUtils.isFileGetted) {
-      getAssetsFileNamesAndCopy();
-      FileUtils.isFileGetted = true;
-    }
+    getAssetsFileNamesAndCopy();
   }
 
   // the initializeAssets method is being called indirectly
   // through the FutureBuilder widget in the build method.
   Future<List<String>> initializeAssets() async {
-    var isNeedAnswer = false;
     final externalStorageFiles =
-        await FileUtils.listFilesInDirectory(isNeedAnswer);
+        await FileUtils.listFilesInDirectory();
     // externalStorageFiles.forEach((element) {
     //   FileUtils.deleteFile(element);
     // });
