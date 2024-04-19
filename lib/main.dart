@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'question_ground.dart';
 // Import the data parser file
 import 'file_utils.dart'; // Import the file utilities
 import 'data_loader.dart'; // Import the data loader
 import 'exam_paper.dart';
+import 'single_question_answer_set.dart';
+import 'dart:developer' as developer;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,35 +44,44 @@ class _MyHomePageState extends State<MyHomePage> {
   late List<QuestionAnswerSetData> questionAnswerSetDataList;
   late bool isLoading = false;
   late List<String> externalStorageFiles = [];
-  late List<String> AssetsFiles = [];
-  final String _filePath = '';
   late String externalFilePath;
 
   @override
   void initState() {
     super.initState();
-    getAssetsFileNamesAndCopy();
+    // getAssetsFileNamesAndCopy();
   }
 
-  // the initializeAssets method is being called indirectly
+  // the listFilesInDirectory method is being called indirectly
   // through the FutureBuilder widget in the build method.
-  Future<List<String>> initializeAssets() async {
-    final externalStorageFiles =
-        await FileUtils.listFilesInDirectory();
-    // externalStorageFiles.forEach((element) {
-    //   FileUtils.deleteFile(element);
-    // });
+  Future<List<String>> listFilesInDirectory() async {
+    developer.log('Starting listFilesInDirectory function');
+    final externalStorageFiles = await FileUtils.listFilesInDirectory();
+    developer.log('External storage files: $externalStorageFiles');
 
+    if (externalStorageFiles.isEmpty) {
+      developer.log('External storage files is empty. Getting assets files');
+      final files = await getAssetsFileNamesAndCopy();
+      List<String> filePaths = files
+          .map((file) => file)
+          .where((path) => !path.contains('_answer'))
+          .toList();
+      developer.log('Files paths: $filePaths');
+
+      return filePaths;
+    }
+    developer.log('Returning external storage files: $externalStorageFiles');
     return externalStorageFiles;
   }
 
   Future<List<String>> getAssetsFileNamesAndCopy() async {
-    print('from getAssetsFileNamesAndCopy');
+    developer.log('from getAssetsFileNamesAndCopy');
     final files = await FileUtils.getAssetsFileNames('assets/');
+    List<String> filePaths = [];
     for (var element in files) {
-      FileUtils.copyAssetFileToExternalIfNotExists(element);
+      filePaths.add(await FileUtils.copyAssetFileToExternalIfNotExists(element));
     }
-    return files;
+    return filePaths;
   }
 
   // Load the data asynchronously
@@ -108,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //   // Get the external storage directory
   //   final directory = await getExternalStorageDirectory();
   //   if (directory == null) {
-  //     print("External storage directory not found.");
+  //     developer.log("External storage directory not found.");
   //     return [];
   //   }
 
@@ -118,15 +128,15 @@ class _MyHomePageState extends State<MyHomePage> {
   // }
 
   void handleEdit(String asset) {
-    print('Editing handleEdit');
+    developer.log('Editing handleEdit');
     // Implement the logic for editing the asset
     openFile(asset);
-    print('Editing asset: $asset');
+    developer.log('Editing asset: $asset');
   }
 
   void handleReset(String asset) {
     // Implement the logic for resetting the asset
-    print('Resetting asset: $asset');
+    developer.log('Resetting asset: $asset');
   }
 
   @override
@@ -139,7 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: FutureBuilder<List<String>>(
-          future: initializeAssets(),
+          future: listFilesInDirectory(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const CircularProgressIndicator(); // Show loading indicator

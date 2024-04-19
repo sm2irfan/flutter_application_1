@@ -5,6 +5,7 @@ import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:convert';
+import 'dart:developer' as developer;
 
 class FileUtils {
   // static count variable
@@ -12,17 +13,28 @@ class FileUtils {
   static bool isFileGetted = false;
 
   static Future<void> openFile(String filePath) async {
-    if (filePath.isNotEmpty) {
-      print("Opening file: $filePath");
+    if (filePath.isEmpty) {
+      developer.log("File path is empty, cannot open file");
+      return;
+    }
+
+    developer.log("Opening file: $filePath");
+    try {
       await OpenFile.open(filePath);
+      developer.log("File opened successfully");
+    } catch (e) {
+      developer.log("Error opening file: $e");
     }
   }
 
   static Future<List<String>> listFilesInDirectory() async {
+    developer.log('Starting listFilesInDirectory function');
+
     // Get the external storage directory
     final directory = await getExternalStorageDirectory();
+
     if (directory == null) {
-      print("External storage directory not found.");
+      developer.log("External storage directory not found.");
       return [];
     }
 
@@ -34,9 +46,11 @@ class FileUtils {
         .toList();
 
     for (var element in filePaths) {
-      print(element);
+      developer.log('File path to get the exam papers: $element');
     }
-    // isFileGetted = true;
+
+    developer.log('listFilesInDirectory function completed');
+
     return filePaths;
   }
 
@@ -54,7 +68,7 @@ class FileUtils {
     // Check if the file already exists
     final File copiedFile = File(filePath);
     if (await copiedFile.exists()) {
-      print("File already exists at: $filePath");
+      developer.log("File already exists at: $filePath");
       return filePath;
     }
 
@@ -64,7 +78,7 @@ class FileUtils {
     // Write the asset data to the external file
     await copiedFile.writeAsBytes(assetData.buffer.asUint8List(), flush: true);
 
-    print("External file copied to: $filePath");
+    developer.log("External file copied to: $filePath");
 
     return filePath;
   }
@@ -89,12 +103,12 @@ class FileUtils {
       final file = File(filePath);
       if (await file.exists()) {
         await file.delete();
-        print('File deleted successfully: $filePath');
+        developer.log('File deleted successfully: $filePath');
       } else {
-        print('File does not exist: $filePath');
+        developer.log('File does not exist: $filePath');
       }
     } catch (e) {
-      print('Error deleting file: $e');
+      developer.log('Error deleting file: $e');
     }
   }
 }
