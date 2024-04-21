@@ -1,19 +1,46 @@
 import 'package:flutter/material.dart';
 
+class ConditionalQuestionText extends StatelessWidget {
+  final QuestionTextData questionTextData;
+
+  const ConditionalQuestionText({
+    super.key,
+    required this.questionTextData,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    if (questionTextData.spaceCount != null &&
+        questionTextData.imageProvider != null) {
+      return QuestionTextWithImage(
+        quesText: questionTextData.quesText,
+        imageProvider: questionTextData.imageProvider!,
+        spaceCount: questionTextData.spaceCount!,
+      );
+    } else {
+      return QuestionText(
+        quesText: questionTextData.quesText,
+      );
+    }
+  }
+}
+
 class QuestionTextWithImage extends StatelessWidget {
   final String quesText;
   final ImageProvider imageProvider;
+  final int spaceCount;
 
   const QuestionTextWithImage({
     super.key,
     required this.quesText,
     required this.imageProvider,
+    required this.spaceCount,
   });
 
   @override
   Widget build(BuildContext context) {
     final List<String> words = quesText.split(" ");
-    int index = 1; // Index of the word you want to use
+    int index = spaceCount; // Index of the word you want to use
     if (words.length > index) {
       return Container(
         width: double.infinity,
@@ -35,7 +62,7 @@ class QuestionTextWithImage extends StatelessWidget {
                 WidgetSpan(
                   child: Image(
                     image: imageProvider,
-                    height: 30, // Adjust the height as needed
+                    height: 50, // Adjust the height as needed
                   ),
                 ),
                 TextSpan(text: words.skip(index).join(" ")),
@@ -77,16 +104,14 @@ class QuestionText extends StatelessWidget {
   }
 }
 
-class QuestionTextWithImageData {
-  final ImageProvider imageProvider;
-  final String spaceCount;
+class QuestionTextData {
+  final String quesText;
+  final ImageProvider? imageProvider;
+  final int? spaceCount; // Make spaceCount nullable
 
-  QuestionTextWithImageData({
-    required this.imageProvider,
-    required this.spaceCount,
+  QuestionTextData({
+    required this.quesText,
+    this.imageProvider,
+    this.spaceCount, // Update spaceCount to be nullable
   });
-  @override
-  String toString() {
-    return 'url: $imageProvider, spaceCount: $spaceCount,';
-  }
 }

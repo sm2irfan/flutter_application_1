@@ -38,6 +38,11 @@ class DataLoader {
 
   static Future<Map<String, dynamic>> readJsonFromAsset(
       String assetPath) async {
+    /*  This method is used to asynchronously load a string of text 
+    from an asset bundle. The assetPath is the path to the asset 
+    within your project's asset folder as defined in the pubspec.
+    yaml file. It's typically used to load configuration files, 
+    JSON data, or other text-based assets into your app.*/
     final jsonString =
         await rootBundle.loadString(assetPath); // Load asset as string
     return json.decode(jsonString); // Decode JSON string

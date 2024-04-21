@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/question_text.dart';
+
 import 'single_question_answer_set.dart';
 import 'dart:developer' as developer;
 
@@ -7,7 +10,13 @@ List<QuestionAnswerSetData> parseQuestionAnswerSets(
     final questionAnswerSets = jsonData['questionAnswerSets'] as List? ?? [];
     return questionAnswerSets.map((questionAnswerSet) {
       final questionTitle = questionAnswerSet['questionTitle'] as String;
-      final questionText = questionAnswerSet['questionText'] as String;
+      final questionTextJson = questionAnswerSet['questionText'];
+      final String? imagePath = questionTextJson['imageProviderUrl'] as String?;
+      final questionText = QuestionTextData(
+        quesText: questionTextJson['quesText'] as String,
+        imageProvider: imagePath != null ? AssetImage(imagePath) : null,
+        spaceCount: questionTextJson['spaceCount'] as int?,
+      );
       final answerOptions = (questionAnswerSet['answerOptions'] as List)
           .map((answerOption) => AnswerOptionData(
                 answerPlace: answerOption['answerPlace'] as String,

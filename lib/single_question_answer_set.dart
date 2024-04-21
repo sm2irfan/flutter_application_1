@@ -7,7 +7,7 @@ import 'dart:developer' as developer;
 // Widget to display a single QuestionAnswerSet
 class SingleQuestionAnswerSet extends StatefulWidget {
   final String questionTitle;
-  final String questionText;
+  final QuestionTextData questionText;
   final List<AnswerOptionData> answerOptions;
   final List<String> selectedAnswers;
   final void Function(List<String>)
@@ -86,9 +86,11 @@ class SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
                 children: <Widget>[
                   QuestionTitle(quesTitle: widget.questionTitle),
                   const SizedBox(height: 8),
-                  QuestionTextWithImage(
-                      quesText: widget.questionText,
-                      imageProvider: const AssetImage('assets/images/bird.png')),
+                  ConditionalQuestionText(
+                    questionTextData: widget.questionText,
+                  ),
+                  // quesText: widget.questionText,
+                  // imageProvider: const AssetImage('assets/images/bird.png')),
                   const SizedBox(height: 8),
                   // Loop through each answer option and create an AnswerOption widget
                   for (var option in widget.answerOptions)
@@ -129,7 +131,7 @@ class AnswerOptionData {
 // Data class to hold the properties of QuestionAnswerSet
 class QuestionAnswerSetData {
   final String questionTitle;
-  final String questionText;
+  final QuestionTextData questionText;
   final List<AnswerOptionData> answerOptions;
 
   QuestionAnswerSetData({
