@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/answer_option.dart';
-import 'widgets/question.dart';
+import 'widgets/question_text.dart';
+import 'widgets/question_title.dart';
 import 'dart:developer' as developer;
 
 // Widget to display a single QuestionAnswerSet
@@ -8,7 +9,7 @@ class SingleQuestionAnswerSet extends StatefulWidget {
   final String questionTitle;
   final String questionText;
   final List<AnswerOptionData> answerOptions;
-  final List<String> selectedAnswers; // Pass selectedAnswers
+  final List<String> selectedAnswers;
   final void Function(List<String>)
       updateSelectedAnswers; // Function to update selectedAnswers
 
@@ -22,8 +23,7 @@ class SingleQuestionAnswerSet extends StatefulWidget {
   });
 
   @override
-  SingleQuestionAnswerSetState createState() =>
-      SingleQuestionAnswerSetState();
+  SingleQuestionAnswerSetState createState() => SingleQuestionAnswerSetState();
 }
 
 class SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
@@ -86,7 +86,9 @@ class SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
                 children: <Widget>[
                   QuestionTitle(quesTitle: widget.questionTitle),
                   const SizedBox(height: 8),
-                  QuestionText(quesText: widget.questionText),
+                  QuestionTextWithImage(
+                      quesText: widget.questionText,
+                      imageProvider: const AssetImage('assets/images/bird.png')),
                   const SizedBox(height: 8),
                   // Loop through each answer option and create an AnswerOption widget
                   for (var option in widget.answerOptions)
