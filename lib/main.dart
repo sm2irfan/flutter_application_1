@@ -75,10 +75,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<List<String>> getAssetsFileNamesAndCopy() async {
     developer.log('from getAssetsFileNamesAndCopy');
-    final files = await FileUtils.getAssetsFileNames('assets/question_and_answer_data/');
+    final files =
+        await FileUtils.getAssetsFileNames('assets/question_and_answer_data/');
     List<String> filePaths = [];
     for (var element in files) {
-      filePaths.add(await FileUtils.copyAssetFileToExternalIfNotExists(element));
+      filePaths
+          .add(await FileUtils.copyAssetFileToExternalIfNotExists(element));
     }
     return filePaths;
   }
@@ -94,7 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // Use the DataLoader class to load the data
     developer.log('Loading data using DataLoader.loadDataAndParser');
     questionAnswerSetDataList = await DataLoader.loadDataAndParser(asset);
-    developer.log('Loaded data successfully $questionAnswerSetDataList.length');
 
     setState(() {
       isLoading = false;
