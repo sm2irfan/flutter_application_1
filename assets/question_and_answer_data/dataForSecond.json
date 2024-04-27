@@ -4,8 +4,8 @@
             "questionTitle": "வினா இலக்கம்: 1",
             "questionText": {
                 "quesText": "மொழிக்கு நிலைபேறு அளிப்பது எழுத்தாகும். ஒலி வடிவத்திற்கு வரிவடிவம் கொடுப்பது எழுத்து என்பர். எழுதப் படுவதனால் எழுத்து எனப் பெயர் பெற்றது. தமிழ் மொழி என்பது செம்மொழியாகவும் பண்டைகாலம் தொட்டே சிறந்த இலக்கண, இலக்கியங்கள் பெற்ற மொழியாகவும் உள்ளது. இந்த மொழியில் எத்தனை எழுத்துக்கள் உள்ளன",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 10
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 10
             },
             "answerOptions": [
                 {
@@ -29,8 +29,8 @@
             "questionTitle": "வினா இலக்கம்: 2",
             "questionText": {
                 "quesText":"ஒரு சதுரத்தின் பக்க நீளம் 4 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
-                "imageProviderUrl": null,
-                "spaceCount": null
+                "smallImageProviderUrl": null,
+                "smallPicSpaceCount": null
             },
             "answerOptions": [
                 {
@@ -54,8 +54,8 @@
             "questionTitle": "வினா இலக்கம்: 3",
             "questionText": {
                 "quesText":"ஒரு ரயில் மணிக்கு 60 கிலோமீட்டர் வேகத்தில் செல்கிறது. அது 3 மணி நேரத்தில் எவ்வளவு தூரம் செல்லும்?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -79,8 +79,8 @@
             "questionTitle": "வினா இலக்கம்: 4",
             "questionText": {
                 "quesText":"ஒரு வட்டத்தின் ஆரம் 7 ஆக இருக்கும்போது அதன் சுற்றளவு என்ன?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 6
             },
             "answerOptions": [
                 {
@@ -104,8 +104,8 @@
             "questionTitle": "வினா இலக்கம்: 5",
             "questionText": {
                 "quesText":"5 மற்றும் 12 ஆகிய இரண்டு எண்களின் கூட்டு என்ன?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 7
             },
             "answerOptions": [
                 {
@@ -129,8 +129,8 @@
             "questionTitle": "வினா இலக்கம்: 6",
             "questionText": {
                 "quesText":"ஒரு முக்கோணத்தின் மூன்று கோணங்களின் மொத்தம் என்ன?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -154,8 +154,8 @@
             "questionTitle": "வினா இலக்கம்: 7",
             "questionText": {
                 "quesText":"ஒரு கிலோகிராம் அரிசி மற்றும் ஒரு கிலோகிராம் இரும்பு எது பாரியது?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 8
             },
             "answerOptions": [
                 {
@@ -179,8 +179,8 @@
             "questionTitle": "வினா இலக்கம்: 8",
             "questionText": {
                 "quesText":"ஒரு மணி நேரத்தில் ஒரு கார் 60 கிலோமீட்டர் செல்கிறது, அது 5 மணி நேரத்தில் எவ்வளவு தூரம் செல்லும்?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -204,8 +204,8 @@
             "questionTitle": "வினா இலக்கம்: 9",
             "questionText": {
                 "quesText":"இலங்கையின் தலைநகரம் எது?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -229,8 +229,8 @@
             "questionTitle": "வினா இலக்கம்: 10",
             "questionText": {
                 "quesText":"இலங்கையின் மிக உயரமான மலை எது?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -254,8 +254,8 @@
             "questionTitle": "வினா இலக்கம்: 11",
             "questionText": {
                 "quesText":"இலங்கையின் தேசிய மரம் எது?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -279,8 +279,8 @@
             "questionTitle": "வினா இலக்கம்: 12",
             "questionText": {
                 "quesText":"இலங்கையின் தேசிய விலங்கு எது?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -304,8 +304,8 @@
             "questionTitle": "வினா இலக்கம்: 13",
             "questionText": {
                 "quesText":"இலங்கையின் தேசிய பறவை எது?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -329,8 +329,8 @@
             "questionTitle": "வினா இலக்கம்: 14",
             "questionText": {
                 "quesText":"ஒரு பெட்டிக்குள் 3 சிவப்பு பந்துகள், 2 பச்சை பந்துகள் மற்றும் 1 நீல பந்து உள்ளன. கண்களை மூடிக்கொண்டு 2 பந்துகளை எடுத்தால், இரண்டும் சிவப்பு நிறத்தில் இருக்க வாய்ப்பு என்ன?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -354,8 +354,8 @@
             "questionTitle": "வினா இலக்கம்: 15",
             "questionText": {
                 "quesText":"ஒரு தொட்டியில் 5 லிட்டர் தண்ணீர் உள்ளது. ஒரு குழாய் நிமிடத்திற்கு 2 லிட்டர் தண்ணீரை நிரப்புகிறது. அந்த குழாய் தொட்டியை நிரப்ப எவ்வளவு நேரம் எடுக்கும்?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {
@@ -379,8 +379,8 @@
             "questionTitle": "வினா இலக்கம்: 16",
             "questionText": {
                 "quesText":"ஒரு கடையில் ஒரு பொருளின் விலை ₹100. அந்த பொருளுக்கு 10% தள்ளுபடி வழங்கப்படுகிறது. தள்ளுபடிக்குப் பிறகு அந்த பொருளின் விலை என்ன?",
-                "imageProviderUrl": "assets/images/bird.png",
-                "spaceCount": 1
+                "smallImageProviderUrl": "assets/images/birdSmall.png",
+                "smallPicSpaceCount": 1
             },
             "answerOptions": [
                 {

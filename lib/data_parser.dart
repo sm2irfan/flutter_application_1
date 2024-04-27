@@ -11,11 +11,19 @@ List<QuestionAnswerSetData> parseQuestionAnswerSets(
     return questionAnswerSets.map((questionAnswerSet) {
       final questionTitle = questionAnswerSet['questionTitle'] as String;
       final questionTextJson = questionAnswerSet['questionText'];
-      final String? imagePath = questionTextJson['imageProviderUrl'] as String?;
+      final String? imagePath =
+          questionTextJson['smallImageProviderUrl'] as String?;
+      final String? largeImagePath =
+          questionTextJson['largeImageProviderUrl'] as String?;
+      final bool? islargePicAbove =
+          questionTextJson['islargePicAbove'] as bool?;
       final questionText = QuestionTextData(
         quesText: questionTextJson['quesText'] as String,
-        imageProvider: imagePath != null ? AssetImage(imagePath) : null,
-        spaceCount: questionTextJson['spaceCount'] as int?,
+        smallImageProvider: imagePath != null ? AssetImage(imagePath) : null,
+        smallPicSpaceCount: questionTextJson['smallPicSpaceCount'] as int?,
+        islargePicAbove: islargePicAbove,
+        largeImageProvider:
+            largeImagePath != null ? AssetImage(largeImagePath) : null,
       );
       final answerOptions = (questionAnswerSet['answerOptions'] as List)
           .map((answerOption) => AnswerOptionData(

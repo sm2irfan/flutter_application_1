@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // Use the DataLoader class to load the data
     developer.log('Loading data using DataLoader.loadDataAndParser');
     questionAnswerSetDataList = await DataLoader.loadDataAndParser(asset);
-    developer.log('Loaded data successfully');
+    developer.log('Loaded data successfully $questionAnswerSetDataList.length');
 
     setState(() {
       isLoading = false;

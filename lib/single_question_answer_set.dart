@@ -90,7 +90,7 @@ class SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
                     questionTextData: widget.questionText,
                   ),
                   // quesText: widget.questionText,
-                  // imageProvider: const AssetImage('assets/images/bird.png')),
+                  // imageProvider: const AssetImage('assets/images/birdSmall.png')),
                   const SizedBox(height: 8),
                   // Loop through each answer option and create an AnswerOption widget
                   for (var option in widget.answerOptions)
