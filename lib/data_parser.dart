@@ -17,11 +17,12 @@ List<QuestionAnswerSetData> parseQuestionAnswerSets(
           questionTextJson['largeImageProviderUrl'] as String?;
       final bool? islargePicAbove =
           questionTextJson['islargePicAbove'] as bool?;
+      final String? quesText = questionTextJson['quesText'] as String?;
       final questionText = QuestionTextData(
-        quesText: questionTextJson['quesText'] as String,
+        questionText: quesText,
         smallImageProvider: imagePath != null ? AssetImage(imagePath) : null,
-        smallPicSpaceCount: questionTextJson['smallPicSpaceCount'] as int?,
-        islargePicAbove: islargePicAbove,
+        smallImageIndex: questionTextJson['smallPicSpaceCount'] as int?,
+        isLargeImageAbove: islargePicAbove,
         largeImageProvider:
             largeImagePath != null ? AssetImage(largeImagePath) : null,
       );

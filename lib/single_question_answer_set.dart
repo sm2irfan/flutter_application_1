@@ -87,7 +87,7 @@ class SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
                   QuestionTitle(quesTitle: widget.questionTitle),
                   const SizedBox(height: 8),
                   ConditionalQuestionText(
-                    questionTextData: widget.questionText,
+                    questionData: widget.questionText,
                   ),
                   // quesText: widget.questionText,
                   // imageProvider: const AssetImage('assets/images/birdSmall.png')),

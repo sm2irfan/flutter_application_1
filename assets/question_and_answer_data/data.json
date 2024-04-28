@@ -7,22 +7,22 @@
                 "smallImageProviderUrl": "assets/images/birdSmall.png",
                 "smallPicSpaceCount": 10,
                 "largeImageProviderUrl": "assets/images/bookLarge.png",
-                "islargePicAbove": false
+                "islargePicAbove": true
             },
                 "answerOptions": [
                 {
                     "answerPlace": "A",
-                    "answerText": "245",
+                    "answerText": "இருநூற்று நாற்பத்தி ஏழு",
                     "boxNumber": "1.1"
                 },
                 {
                     "answerPlace": "B",
-                    "answerText": "256",
+                    "answerText": "இருநூற்று அம்பத்தி ஆறு",
                     "boxNumber": "1.2"
                 },
                 {
                     "answerPlace": "C",
-                    "answerText": "247",
+                    "answerText": "இருநூற்று நாற்பத்தி ஏழு",
                     "boxNumber": "1.3"
                 }
             ]
@@ -34,7 +34,7 @@
                 "smallImageProviderUrl": "assets/images/birdSmall.png",
                 "smallPicSpaceCount": 2,
                 "largeImageProviderUrl": "assets/images/bookLarge.png",
-                "islargePicAbove": true
+                "islargePicAbove": false
             },
             "answerOptions": [
                 {
@@ -57,7 +57,7 @@
         {
             "questionTitle": "வினா இலக்கம்: 3",
             "questionText": {
-                "quesText":"ஒரு சதுரத்தின் பக்க நீளம் 5 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?"
+                "quesText":"a ஒரு சதுரத்தின் பக்க நீளம் 5 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?"
             },
             "answerOptions": [
                 {
@@ -99,6 +99,55 @@
                     "answerPlace": "C",
                     "answerText": "16",
                     "boxNumber": "4.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 5",
+            "questionText": {
+                "largeImageProviderUrl": "assets/images/bookLarge.png",
+                "islargePicAbove": true
+            },
+            "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerText": "8",
+                    "boxNumber": "5.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerText": "12",
+                    "boxNumber": "5.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerText": "16",
+                    "boxNumber": "5.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 6",
+            "questionText": {
+                "quesText":"ஒரு சதுரத்தின் பக்க நீளம் 6 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
+                "largeImageProviderUrl": "assets/images/bookLarge.png",
+                "islargePicAbove": true
+            },
+            "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerText": "8",
+                    "boxNumber": "6.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerText": "muppathi aaru",
+                    "boxNumber": "6.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerText": "16",
+                    "boxNumber": "6.3"
                 }
             ]
         }
