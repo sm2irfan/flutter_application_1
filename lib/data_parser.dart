@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/answer_option.dart';
 import 'package:flutter_application_1/widgets/question_text.dart';
 
 import 'single_question_answer_set.dart';
@@ -10,18 +11,18 @@ List<QuestionAnswerSetData> parseQuestionAnswerSets(
     final questionAnswerSets = jsonData['questionAnswerSets'] as List? ?? [];
     return questionAnswerSets.map((questionAnswerSet) {
       final questionTitle = questionAnswerSet['questionTitle'] as String;
-      final questionTextJson = questionAnswerSet['questionText'];
+      final questionTextJson = questionAnswerSet['questionTextData'];
       final String? imagePath =
-          questionTextJson['smallImageProviderUrl'] as String?;
+          questionTextJson['smallImageProvider'] as String?;
       final String? largeImagePath =
-          questionTextJson['largeImageProviderUrl'] as String?;
+          questionTextJson['largeImageProvider'] as String?;
       final bool? islargePicAbove =
-          questionTextJson['islargePicAbove'] as bool?;
-      final String? quesText = questionTextJson['quesText'] as String?;
+          questionTextJson['isLargeImageAbove'] as bool?;
+      final String? quesText = questionTextJson['questionText'] as String?;
       final questionText = QuestionTextData(
         questionText: quesText,
         smallImageProvider: imagePath != null ? AssetImage(imagePath) : null,
-        smallImageIndex: questionTextJson['smallPicSpaceCount'] as int?,
+        smallImageIndex: questionTextJson['smallImageIndex'] as int?,
         isLargeImageAbove: islargePicAbove,
         largeImageProvider:
             largeImagePath != null ? AssetImage(largeImagePath) : null,
@@ -29,7 +30,16 @@ List<QuestionAnswerSetData> parseQuestionAnswerSets(
       final answerOptions = (questionAnswerSet['answerOptions'] as List)
           .map((answerOption) => AnswerOptionData(
                 answerPlace: answerOption['answerPlace'] as String,
-                answerText: answerOption['answerText'] as String,
+                answerTextData: AnswerTextData(
+                  answerText:
+                      answerOption['answerTextData']['answerText'] as String?,
+                  mediumImageProvider: answerOption['answerTextData']
+                              ['mediumImageProvider'] !=
+                          null
+                      ? AssetImage(answerOption['answerTextData']
+                          ['mediumImageProvider'] as String)
+                      : null,
+                ),
                 boxNumber: answerOption['boxNumber'] as String,
               ))
           .toList();

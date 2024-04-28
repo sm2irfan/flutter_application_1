@@ -52,12 +52,12 @@ class QuestionTextWithBothImages extends StatelessWidget {
           children: [
             if (questionData.isLargeImageAbove ?? false)
               ImageWidget(
-                  imageProvider: questionData.largeImageProvider, height: 250),
+                  imageProvider: questionData.largeImageProvider, height: 200),
             if (hasSmallImageInText)
               _buildRichTextWithImage(context, words, smallImageIndex),
             if (questionData.isLargeImageAbove == false)
               ImageWidget(
-                  imageProvider: questionData.largeImageProvider, height: 250),
+                  imageProvider: questionData.largeImageProvider, height: 200),
           ],
         ),
       ),
@@ -121,12 +121,12 @@ class QuestionTextWithLargeImage extends StatelessWidget {
           children: [
             if (questionData.hasLargeImage && (questionData.isLargeImageAbove!))
               ImageWidget(
-                  imageProvider: questionData.largeImageProvider, height: 250),
+                  imageProvider: questionData.largeImageProvider, height: 200),
             if (questionData.hasQuestionText) Text(questionData.questionText!),
             if (questionData.hasLargeImage &&
                 (!questionData.isLargeImageAbove!))
               ImageWidget(
-                  imageProvider: questionData.largeImageProvider, height: 250),
+                  imageProvider: questionData.largeImageProvider, height: 200),
           ],
         ),
       ),

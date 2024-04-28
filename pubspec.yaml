@@ -63,6 +63,7 @@ flutter:
   assets:
       - assets/question_and_answer_data/
       - assets/images/
+      - assets/images/question1/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

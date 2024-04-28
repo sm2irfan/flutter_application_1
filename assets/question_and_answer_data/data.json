@@ -2,152 +2,220 @@
     "questionAnswerSets": [
         {
             "questionTitle": "வினா இலக்கம்: 1",
-            "questionText": {
-                "quesText":"TT மொழிக்கு நிலைபேறு அளிப்பது எழுத்தாகும். ஒலி வடிவத்திற்கு வரிவடிவம் கொடுப்பது எழுத்து என்பர். எழுதப் படுவதனால் எழுத்து எனப் பெயர் பெற்றது. தமிழ் மொழி என்பது செம்மொழியாகவும் பண்டைகாலம் தொட்டே சிறந்த இலக்கண, இலக்கியங்கள் பெற்ற மொழியாகவும் உள்ளது. இந்த மொழியில் எத்தனை எழுத்துக்கள் உள்ளன ?",
-                "smallImageProviderUrl": "assets/images/birdSmall.png",
-                "smallPicSpaceCount": 10,
-                "largeImageProviderUrl": "assets/images/bookLarge.png",
-                "islargePicAbove": true
+            "questionTextData": {
+                "largeImageProvider": "assets/images/question1/q1.png",
+                "isLargeImageAbove": true
             },
                 "answerOptions": [
                 {
                     "answerPlace": "A",
-                    "answerText": "இருநூற்று நாற்பத்தி ஏழு",
+                    "answerTextData": {
+                        "answerText":"12",
+                        "mediumImageProvider": "assets/images/question1/q1a1.png"
+                        
+                    },
                     "boxNumber": "1.1"
                 },
                 {
                     "answerPlace": "B",
-                    "answerText": "இருநூற்று அம்பத்தி ஆறு",
+                    "answerTextData": {
+                        "mediumImageProvider": "assets/images/question1/q1a2.png"
+                    },
                     "boxNumber": "1.2"
                 },
                 {
                     "answerPlace": "C",
-                    "answerText": "இருநூற்று நாற்பத்தி ஏழு",
+                    "answerTextData": {
+                        "answerText": "மொழிக்கு நிலைபேறு அளிப்பது எழுத்தாகும். ஒலி வடிவத்திற்கு வரிவடிவம் கொடுப்பது எழுத்து என்பர். எழுதப் படுவதனால் எழுத்து எனப் பெயர் பெற்றது. தமிழ் மொழி என்பது செம்மொழியாகவும் பண்டைகாலம் தொட்டே சிறந்த",
+                        "mediumImageProvider": "assets/images/question1/q1a3.png"
+                    },
                     "boxNumber": "1.3"
                 }
             ]
         },
         {
             "questionTitle": "வினா இலக்கம்: 2",
-            "questionText": {
-                "quesText":"ஒரு சதுரத்தின் பக்க நீளம் 4 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
-                "smallImageProviderUrl": "assets/images/birdSmall.png",
-                "smallPicSpaceCount": 2,
-                "largeImageProviderUrl": "assets/images/bookLarge.png",
-                "islargePicAbove": false
+            "questionTextData": {
+                "largeImageProvider": "assets/images/question1/q2.png",
+                "isLargeImageAbove": true
             },
             "answerOptions": [
                 {
                     "answerPlace": "A",
-                    "answerText": "8",
+                    "answerTextData": {
+                        "mediumImageProvider": "assets/images/question1/q2a1.png"
+                    },
                     "boxNumber": "2.1"
                 },
                 {
                     "answerPlace": "B",
-                    "answerText": "12",
+                    "answerTextData": {
+                        "answerText":"12",
+                        "mediumImageProvider": "assets/images/question1/q2a2.png"
+                    },
                     "boxNumber": "2.2"
                 },
                 {
                     "answerPlace": "C",
-                    "answerText": "16",
+                    "answerTextData": {
+                        "answerText":"16",
+                        "mediumImageProvider": "assets/images/question1/q2a3.png"
+                    },
                     "boxNumber": "2.3"
                 }
             ]
         },
         {
             "questionTitle": "வினா இலக்கம்: 3",
-            "questionText": {
-                "quesText":"a ஒரு சதுரத்தின் பக்க நீளம் 5 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?"
+            "questionTextData": {
+                "questionText":"a ஒரு சதுரத்தின் பக்க நீளம் 5 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?"
             },
             "answerOptions": [
                 {
                     "answerPlace": "A",
-                    "answerText": "20",
+                    "answerTextData": {
+                        "answerText":"20"
+                    },
                     "boxNumber": "3.1"
                 },
                 {
                     "answerPlace": "B",
-                    "answerText": "25",
+                    "answerTextData": {
+                        "answerText":"25"
+                    },
                     "boxNumber": "3.2"
                 },
                 {
                     "answerPlace": "C",
-                    "answerText": "16",
+                    "answerTextData": {
+                        "answerText":"16"
+                    },
                     "boxNumber": "3.3"
                 }
             ]
         },
         {
             "questionTitle": "வினா இலக்கம்: 4",
-            "questionText": {
-                "quesText":"ஒரு சதுரத்தின் பக்க நீளம் 4 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
-                "smallImageProviderUrl": "assets/images/birdSmall.png",
-                "smallPicSpaceCount": 1
+            "questionTextData": {
+                "questionText":"ஒரு சதுரத்தின் பக்க நீளம் 4 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
+                "smallImageProvider": "assets/images/birdSmall.png",
+                "smallImageIndex": 1
             },
             "answerOptions": [
                 {
                     "answerPlace": "A",
-                    "answerText": "8",
+                    "answerTextData": {
+                        "answerText":"8"
+                    },
                     "boxNumber": "4.1"
                 },
                 {
                     "answerPlace": "B",
-                    "answerText": "12",
+                    "answerTextData": {
+                        "answerText":"12"
+                    },
                     "boxNumber": "4.2"
                 },
                 {
                     "answerPlace": "C",
-                    "answerText": "16",
+                    "answerTextData": {
+                        "answerText":"16"
+                    },
                     "boxNumber": "4.3"
                 }
             ]
         },
         {
             "questionTitle": "வினா இலக்கம்: 5",
-            "questionText": {
-                "largeImageProviderUrl": "assets/images/bookLarge.png",
-                "islargePicAbove": true
+            "questionTextData": {
+                "largeImageProvider": "assets/images/bookLarge.png",
+                "isLargeImageAbove": true
             },
             "answerOptions": [
                 {
                     "answerPlace": "A",
-                    "answerText": "8",
+                    "answerTextData": {
+                        "answerText":"8"
+                    },
                     "boxNumber": "5.1"
                 },
                 {
                     "answerPlace": "B",
-                    "answerText": "12",
+                    "answerTextData": {
+                        "answerText":"12"
+                    },
                     "boxNumber": "5.2"
                 },
                 {
                     "answerPlace": "C",
-                    "answerText": "16",
+                    "answerTextData": {
+                        "answerText":"16"
+                    },
                     "boxNumber": "5.3"
                 }
             ]
         },
         {
             "questionTitle": "வினா இலக்கம்: 6",
-            "questionText": {
-                "quesText":"ஒரு சதுரத்தின் பக்க நீளம் 6 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
-                "largeImageProviderUrl": "assets/images/bookLarge.png",
-                "islargePicAbove": true
+            "questionTextData": {
+                "questionText":"ஒரு சதுரத்தின் பக்க நீளம் 6 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
+                "largeImageProvider": "assets/images/bookLarge.png",
+                "isLargeImageAbove": true
             },
             "answerOptions": [
                 {
                     "answerPlace": "A",
-                    "answerText": "8",
+                    "answerTextData": {
+                        "answerText":"8"
+                    },
                     "boxNumber": "6.1"
                 },
                 {
                     "answerPlace": "B",
-                    "answerText": "muppathi aaru",
+                    "answerTextData": {
+                        "answerText":"12"
+                    },
                     "boxNumber": "6.2"
                 },
                 {
                     "answerPlace": "C",
-                    "answerText": "16",
+                    "answerTextData": {
+                        "answerText":"16"
+                    },
                     "boxNumber": "6.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 7",
+            "questionTextData": {
+                "questionText":"TT மொழிக்கு நிலைபேறு அளிப்பது எழுத்தாகும். ஒலி வடிவத்திற்கு வரிவடிவம் கொடுப்பது எழுத்து என்பர். எழுதப் படுவதனால் எழுத்து எனப் பெயர் பெற்றது. தமிழ் மொழி என்பது செம்மொழியாகவும் பண்டைகாலம் தொட்டே சிறந்த இலக்கண, இலக்கியங்கள் பெற்ற மொழியாகவும் உள்ளது. இந்த மொழியில் எத்தனை எழுத்துக்கள் உள்ளன ?",
+                "smallImageProvider": "assets/images/birdSmall.png",
+                "smallImageIndex": 30,
+                "largeImageProvider": "assets/images/bookLarge.png",
+                "isLargeImageAbove": false
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"12"
+                    },
+                    "boxNumber": "7.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"12"
+                    },
+                    "boxNumber": "7.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"12"
+                    },
+                    "boxNumber": "7.3"
                 }
             ]
         }

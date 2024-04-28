@@ -96,7 +96,7 @@ class SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
                   for (var option in widget.answerOptions)
                     AnswerOption(
                       answerPlace: option.answerPlace,
-                      answerText: option.answerText,
+                      answerTextData: option.answerTextData,
                       color: getAnswerBoxColor(option.boxNumber),
                       onTap: () => selectAnswer(option.boxNumber),
                     ),
@@ -114,18 +114,14 @@ class SingleQuestionAnswerSetState extends State<SingleQuestionAnswerSet> {
 // Data class to hold the properties of an AnswerOption
 class AnswerOptionData {
   final String answerPlace;
-  final String answerText;
+  final AnswerTextData answerTextData;
   final String boxNumber;
 
   AnswerOptionData({
     required this.answerPlace,
-    required this.answerText,
+    required this.answerTextData,
     required this.boxNumber,
   });
-  @override
-  String toString() {
-    return 'answerPlace: $answerPlace, answerText: $answerText, boxNumber: $boxNumber';
-  }
 }
 
 // Data class to hold the properties of QuestionAnswerSet
