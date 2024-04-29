@@ -39,6 +39,14 @@ List<QuestionAnswerSetData> parseQuestionAnswerSets(
                       ? AssetImage(answerOption['answerTextData']
                           ['mediumImageProvider'] as String)
                       : null,
+                  smallImageProvider: answerOption['answerTextData']
+                              ['smallImageProvider'] !=
+                          null
+                      ? AssetImage(answerOption['answerTextData']
+                          ['smallImageProvider'] as String)
+                      : null,
+                  smallImageIndex:
+                      answerOption['answerTextData']['smallImageIndex'] as int?,
                 ),
                 boxNumber: answerOption['boxNumber'] as String,
               ))

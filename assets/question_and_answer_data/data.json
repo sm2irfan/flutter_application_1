@@ -68,7 +68,7 @@
         {
             "questionTitle": "வினா இலக்கம்: 3",
             "questionTextData": {
-                "questionText":"a ஒரு சதுரத்தின் பக்க நீளம் 5 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?"
+                "questionText":"number 3 a ஒரு சதுரத்தின் பக்க நீளம் 5 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?"
             },
             "answerOptions": [
                 {
@@ -88,7 +88,10 @@
                 {
                     "answerPlace": "C",
                     "answerTextData": {
-                        "answerText":"16"
+                        "answerText":"number 3 ஒரு சதுரத்தின் பக்க நீளம் 4 ஆக இருக்கும்போது அதன் பரப்பளவு என்ன?",
+                        "smallImageProvider": "assets/images/birdSmall.png",
+                        "smallImageIndex": 2,
+                        "mediumImageProvider": "assets/images/question1/q2a3.png"
                     },
                     "boxNumber": "3.3"
                 }

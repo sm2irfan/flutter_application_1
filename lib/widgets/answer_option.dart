@@ -25,92 +25,128 @@ class AnswerOption extends StatelessWidget {
           side: const BorderSide(color: Colors.blue, width: 1),
         ),
         child: ListTile(
-          title: answerTextCondition(),
-          leading: Container(
-            width: 30,
-            height: 30,
-            decoration: const BoxDecoration(
-              color: Colors.blue,
-              shape: BoxShape.circle,
-            ),
-            child: Center(
-              child: Text(
-                answerPlace,
-                style: const TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
+          title: _buildAnswerTextCondition(context),
+          leading: _buildLeadingContainer(answerPlace),
         ),
       ),
     );
   }
 
-  Widget answerTextCondition() {
-    return ConditionalAnswerText(answerTextData: answerTextData);
+  Widget _buildAnswerTextCondition(BuildContext context) {
+    return ConditionalAnswerText(
+      answerTextData: answerTextData,
+      defaultTextStyle: DefaultTextStyle.of(context).style,
+    );
+  }
+
+  Widget _buildLeadingContainer(String answerPlace) {
+    return SizedBox(
+      width: 30,
+      height: 30,
+      child: CircleAvatar(
+        backgroundColor: Colors.blue,
+        child: Text(
+          answerPlace,
+          style: const TextStyle(color: Colors.white),
+        ),
+      ),
+    );
   }
 }
 
 class ConditionalAnswerText extends StatelessWidget {
   final AnswerTextData answerTextData;
+  final TextStyle defaultTextStyle;
 
-  const ConditionalAnswerText({super.key, required this.answerTextData});
+  const ConditionalAnswerText({
+    super.key,
+    required this.answerTextData,
+    required this.defaultTextStyle,
+  });
 
   @override
   Widget build(BuildContext context) {
     final List<String> words = answerTextData.answerText?.split(" ") ?? [];
-    const int smallImageIndex = 0;
-    ImageProvider smallImageProvider = answerTextData.smallImageProvider ??
-        const AssetImage('assets/images/noImage50.png');
-    ImageProvider mediumImageProvider = answerTextData.mediumImageProvider ??
-        const AssetImage('assets/images/noImage150.png');
+    final int smallImageIndex = answerTextData.smallImageIndex ?? 0;
+    final ImageProvider smallImageProvider =
+        answerTextData.smallImageProvider ??
+            const AssetImage('assets/images/noImage50.png');
+    final ImageProvider mediumImageProvider =
+        answerTextData.mediumImageProvider ??
+            const AssetImage('assets/images/noImage150.png');
+
     if (answerTextData.hasAnswerText &&
         answerTextData.hasMediumImage &&
         answerTextData.hasSmallImage) {
-      return richTextWidgetWithImage(
-          words, smallImageIndex, smallImageProvider, mediumImageProvider);
+      return _buildRichTextWidgetWithImage(
+        words,
+        smallImageIndex,
+        smallImageProvider,
+        mediumImageProvider,
+      );
     } else if (answerTextData.hasAnswerText && answerTextData.hasMediumImage) {
-      return answerWithMediumImage(mediumImageProvider);
+      return _buildAnswerWithMediumImage(mediumImageProvider);
     } else if (answerTextData.hasAnswerText && answerTextData.hasSmallImage) {
       return RichTextWidget(
         words: words,
         index: smallImageIndex,
         smallImageProvider: smallImageProvider,
+        defaultTextStyle: defaultTextStyle,
       );
     } else if (answerTextData.hasMediumImage) {
-      return ImageWidget(imageProvider: mediumImageProvider, height: 80);
+      return Padding(
+        padding: const EdgeInsets.only(
+            left: 16.0), // Adjust the padding value as needed
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: ImageWidget(imageProvider: mediumImageProvider, height: 80),
+        ),
+      );
     } else {
-      return textOnly();
+      return _buildTextOnly();
     }
   }
 
-  Column answerWithMediumImage(imageProvider) {
+  Column _buildAnswerWithMediumImage(ImageProvider imageProvider) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         ImageWidget(imageProvider: imageProvider, height: 80),
         Text(
           answerTextData.answerText ?? '',
-          style: const TextStyle(color: Colors.black),
+          style: defaultTextStyle.copyWith(color: Colors.black),
         ),
       ],
     );
   }
 
-  Text textOnly() {
+  Text _buildTextOnly() {
     return Text(
       answerTextData.answerText ?? '',
-      style: const TextStyle(color: Colors.black),
+      style: defaultTextStyle.copyWith(color: Colors.black),
     );
   }
 
-  Widget richTextWidgetWithImage(
-      words, smallImageIndex, smallImageProvider, mediumImageProvider) {
-    return Column(children: [
-      ImageWidget(imageProvider: mediumImageProvider, height: 80),
-      RichTextWidget(
+  Widget _buildRichTextWidgetWithImage(
+    List<String> words,
+    int smallImageIndex,
+    ImageProvider smallImageProvider,
+    ImageProvider mediumImageProvider,
+  ) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ImageWidget(imageProvider: mediumImageProvider, height: 80),
+        RichTextWidget(
           words: words,
           index: smallImageIndex,
-          smallImageProvider: smallImageProvider),
-    ]);
+          smallImageProvider: smallImageProvider,
+          defaultTextStyle: defaultTextStyle,
+        ),
+      ],
+    );
   }
 }
 
@@ -118,19 +154,21 @@ class RichTextWidget extends StatelessWidget {
   final List<String> words;
   final int index;
   final ImageProvider? smallImageProvider;
+  final TextStyle defaultTextStyle;
 
   const RichTextWidget({
     super.key,
     required this.words,
     required this.index,
     this.smallImageProvider,
+    required this.defaultTextStyle,
   });
 
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        style: DefaultTextStyle.of(context).style,
+        style: defaultTextStyle,
         children: [
           TextSpan(text: words.take(index).join(" ")),
           WidgetSpan(
@@ -158,6 +196,7 @@ class ImageWidget extends StatelessWidget {
     return Image(
       image: imageProvider ?? defaultImageProvider,
       height: height,
+      fit: BoxFit.contain,
     );
   }
 }
@@ -173,9 +212,10 @@ class AnswerTextData {
   bool get hasSmallImage => smallImageProvider != null;
   bool get hasMediumImage => mediumImageProvider != null;
 
-  AnswerTextData(
-      {this.answerText,
-      this.smallImageProvider,
-      this.smallImageIndex,
-      this.mediumImageProvider});
+  AnswerTextData({
+    this.answerText,
+    this.smallImageProvider,
+    this.smallImageIndex,
+    this.mediumImageProvider,
+  });
 }
