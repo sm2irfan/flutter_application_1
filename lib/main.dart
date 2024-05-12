@@ -41,7 +41,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late List<QuestionAnswerSetData> questionAnswerSetDataList;
+  late List<dynamic> questionAnswerSetDataList;
   late bool isLoading = false;
   late List<String> externalStorageFiles = [];
   late String externalFilePath;

@@ -7,7 +7,7 @@ import 'single_question_answer_set.dart';
 import 'dart:developer' as developer;
 
 class DataLoader {
-  static Future<List<QuestionAnswerSetData>> loadDataAndParser(
+  static Future<List<dynamic>> loadDataAndParser(
       String asset) async {
     developer.log('Loading data from $asset'); // Log the file being loaded
     final jsonData = await File(asset).readAsString();

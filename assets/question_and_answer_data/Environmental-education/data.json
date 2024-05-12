@@ -1,0 +1,302 @@
+{
+    "questionAnswerSets": [
+        {
+            "questionDescription": "this is for question description"
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 1",
+            "questionTextData": {
+                "questionText":"பனிக்கட்டியை நீண்ட நேரம் கரையாமல் பாதுகாக்க இடப்பட வேண்டியது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"சாம்பல்"
+                    },
+                    "boxNumber": "1.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மரத்தூள்"
+                    },
+                    "boxNumber": "1.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மண்"
+                    },
+                    "boxNumber": "1.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 2",
+            "questionTextData": {
+                "questionText":"தேசிய கீதத்தை நாம் பாடும் போது நிற்க வேண்டிய நிலை,"
+            },
+            "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"இலகுவாக நிற்றல்"
+                    },
+                    "boxNumber": "2.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"பொறுமையாக நிற்றல்"
+                    },
+                    "boxNumber": "2.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"கவனமாக நிற்றல்"
+                    },
+                    "boxNumber": "2.3"
+                }
+            ]
+        },
+        {
+            "questionDescription": "this is for question description 2"
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 3",
+            "questionTextData": {
+                "questionText":"மண்ணரிப்பு ஏற்படுவதில் பின்வரும் எச்செயல் அதிகம் செல்வாக்குச் செலுத்தும்?"
+            },
+            "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"கான் வெட்டுதல்"
+                    },
+                    "boxNumber": "3.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"கல்வேலி கட்டுதல்"
+                    },
+                    "boxNumber": "3.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மண்அகழ்வு"
+                    },
+                    "boxNumber": "3.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 4",
+            "questionTextData": {
+                "questionText":"பின்வரும் எது இயற்கையாகவே ஒரு சுவையான பானத்தைத் திருகிறது?"
+            },
+            "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"இளநீர்"
+                    },
+                    "boxNumber": "4.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"தோடம்பழம்"
+                    },
+                    "boxNumber": "4.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"எலுமிச்சம்பழம்"
+                    },
+                    "boxNumber": "4.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 5",
+            "questionTextData": {
+                "questionText":"இக்குறியீடு குறித்து நிற்பது?",
+                "largeImageProvider": "assets/question_and_answer_data/Environmental-education/image/5.jpg",
+                "isLargeImageAbove": false
+            },
+            "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"இலங்கை மின்சார சபை"
+                    },
+                    "boxNumber": "5.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"எரிபொருள் நிரப்பு நிலையம்"
+                    },
+                    "boxNumber": "5.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மின் விநியோகிக்கும் இடம்"
+                    },
+                    "boxNumber": "5.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 6",
+            "questionTextData": {
+                "questionText":"ஊசிதுளை கமராவில் தோன்றும் விம்பமானது எவ்வாறு தென்படும்?"
+            },
+            "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"தலைகீழாக தென்படும்"
+                    },
+                    "boxNumber": "6.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"நேராக தென்படும்"
+                    },
+                    "boxNumber": "6.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"உருபருத்து தென்படும்"
+                    },
+                    "boxNumber": "6.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 7",
+            "questionTextData": {
+                "questionText":"கதிர்காமம் புனித நகர் அமைந்துள்ள மாகாணம் எது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"ஊவாமாகாணம் மெனாராகல"
+                    },
+                    "boxNumber": "7.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மத்திய மாகாணம் கலகமலிகை"
+                    },
+                    "boxNumber": "7.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மேல்மாகாணம்"
+                    },
+                    "boxNumber": "7.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 8",
+            "questionTextData": {
+                "questionText":" ஒலிம்பிக் வலயங்களின் எண்ணிக்கை யாது ?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"3"
+                    },
+                    "boxNumber": "8.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"6"
+                    },
+                    "boxNumber": "8.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"5"
+                    },
+                    "boxNumber": "8.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 9",
+            "questionTextData": {
+                "questionText":"கதிர்காமம் புனித நகர் அமைந்துள்ள மாகாணம் எது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"ஊவாமாகாணம் மெனாராகல"
+                    },
+                    "boxNumber": "9.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மத்திய மாகாணம் கலகமலிகை"
+                    },
+                    "boxNumber": "9.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மேல்மாகாணம்"
+                    },
+                    "boxNumber": "9.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 10",
+            "questionTextData": {
+                "questionText":"பின்வருவனவற்றுள் நீரில்பிணைந்த கலாசாரம் அல்லாதது,"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"பிரித் -ஓதிய நீரைப் பயன்படுத்தல் "
+                    },
+                    "boxNumber": "10.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"நீரைக் கொண்டு 'வுளு' செய்தல் "
+                    },
+                    "boxNumber": "10.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"தலைமுடியை வெட்டி நீரில் இடல் "
+                    },
+                    "boxNumber": "10.3"
+                }
+            ]
+        }
+    ]
+}

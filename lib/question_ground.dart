@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/data_loader.dart';
+import 'package:flutter_application_1/widgets/question_description.dart';
 import 'widgets/marks_app_drawer.dart';
 import 'single_question_answer_set.dart';
 import 'dart:developer' as developer;
@@ -15,14 +16,14 @@ class QuestionGround extends StatefulWidget {
 
   final String filePath;
   final String title;
-  final List<QuestionAnswerSetData> questionAnswerSetDataList;
+  final List<dynamic> questionAnswerSetDataList;
 
   @override
   State<QuestionGround> createState() => _QuestionGroundState();
 }
 
 class _QuestionGroundState extends State<QuestionGround> {
-  late List<QuestionAnswerSetData> questionAnswerSetDataList;
+  late List<dynamic> questionAnswerSetDataList;
   List<String> selectedAnswers = []; // Global list to store selected answers
 
   @override
@@ -105,18 +106,23 @@ class _QuestionGroundState extends State<QuestionGround> {
         child: Column(
           children: <Widget>[
             // Loop through each QuestionAnswerSet data and create a QuestionAnswerSet widget
-            for (var data in questionAnswerSetDataList)
-              SingleQuestionAnswerSet(
-                questionTitle: data.questionTitle,
-                questionText: data.questionText,
-                answerOptions: data.answerOptions,
-                selectedAnswers: selectedAnswers, // Pass selectedAnswers down
-                updateSelectedAnswers: (value) {
-                  setState(() {
-                    selectedAnswers = value;
-                  });
-                },
-              ),
+            ...questionAnswerSetDataList.map((data) {
+              if (data is String) {
+                return QuestionDescription(descriptionText: data);
+              } else {
+                return SingleQuestionAnswerSet(
+                  questionTitle: data.questionTitle,
+                  questionText: data.questionText,
+                  answerOptions: data.answerOptions,
+                  selectedAnswers: selectedAnswers,
+                  updateSelectedAnswers: (value) {
+                    setState(() {
+                      selectedAnswers = value;
+                    });
+                  },
+                );
+              }
+            }).expand((widget) => [widget]),
             // Submit Button
             ElevatedButton(
               onPressed: handleSubmit,

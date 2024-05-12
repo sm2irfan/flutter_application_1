@@ -121,12 +121,12 @@ class QuestionTextWithLargeImage extends StatelessWidget {
           children: [
             if (questionData.hasLargeImage && (questionData.isLargeImageAbove!))
               ImageWidget(
-                  imageProvider: questionData.largeImageProvider, height: 200),
+                  imageProvider: questionData.largeImageProvider, height: 150),
             if (questionData.hasQuestionText) Text(questionData.questionText!),
             if (questionData.hasLargeImage &&
                 (!questionData.isLargeImageAbove!))
               ImageWidget(
-                  imageProvider: questionData.largeImageProvider, height: 200),
+                  imageProvider: questionData.largeImageProvider, height: 150),
           ],
         ),
       ),
