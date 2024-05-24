@@ -59,28 +59,34 @@ class _QuestionGroundState extends State<QuestionGround> {
     // Find the intersection of sets to get matching elements
     var matchingSet = selectedSet.intersection(answerSetP);
 
+    // Find the difference of sets to get non-matching elements
+    var nonMatchingSet = answerSetP.difference(selectedSet);
+
+    developer.log("Non-matching elements: $nonMatchingSet");
     developer.log("Matching elements: $matchingSet");
 
     // Get the count of matching elements
     int matchingCount = matchingSet.length;
 
     double calculatedScore = (matchingCount / answerSet.length) * 100;
-    int ceilingScore = calculatedScore.ceil().toInt();
+    int roundedScore = calculatedScore.round();
 
     developer.log("Calculated Score: $calculatedScore");
 
     developer.log("Number of matching elements: $matchingCount");
 
-    showSubmitDialog(ceilingScore);
+    showSubmitDialog(roundedScore, nonMatchingSet);
   }
 
-  void showSubmitDialog(int calculatedScore) {
+  void showSubmitDialog(int calculatedScore, nonMatchingSet) {
+    // var matched = '2.1, 3.1';
+
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Score: $calculatedScore'),
-          content: const Text('Don\'t slack off in your efforts...'),
+          content: Text('not correct: $nonMatchingSet'),
           actions: <Widget>[
             TextButton(
               onPressed: () {

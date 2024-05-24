@@ -1,9 +1,6 @@
 {
     "questionAnswerSets": [
         {
-            "questionDescription": "this is for question description"
-        },
-        {
             "questionTitle": "வினா இலக்கம்: 1",
             "questionTextData": {
                 "questionText":"பனிக்கட்டியை நீண்ட நேரம் கரையாமல் பாதுகாக்க இடப்பட வேண்டியது?"
@@ -60,9 +57,6 @@
                     "boxNumber": "2.3"
                 }
             ]
-        },
-        {
-            "questionDescription": "this is for question description 2"
         },
         {
             "questionTitle": "வினா இலக்கம்: 3",
@@ -243,35 +237,6 @@
         {
             "questionTitle": "வினா இலக்கம்: 9",
             "questionTextData": {
-                "questionText":"கதிர்காமம் புனித நகர் அமைந்துள்ள மாகாணம் எது?"
-            },
-                "answerOptions": [
-                {
-                    "answerPlace": "A",
-                    "answerTextData": {
-                        "answerText":"ஊவாமாகாணம் மெனாராகல"
-                    },
-                    "boxNumber": "9.1"
-                },
-                {
-                    "answerPlace": "B",
-                    "answerTextData": {
-                        "answerText":"மத்திய மாகாணம் கலகமலிகை"
-                    },
-                    "boxNumber": "9.2"
-                },
-                {
-                    "answerPlace": "C",
-                    "answerTextData": {
-                        "answerText":"மேல்மாகாணம்"
-                    },
-                    "boxNumber": "9.3"
-                }
-            ]
-        },
-        {
-            "questionTitle": "வினா இலக்கம்: 10",
-            "questionTextData": {
                 "questionText":"பின்வருவனவற்றுள் நீரில்பிணைந்த கலாசாரம் அல்லாதது,"
             },
                 "answerOptions": [
@@ -280,23 +245,1221 @@
                     "answerTextData": {
                         "answerText":"பிரித் -ஓதிய நீரைப் பயன்படுத்தல் "
                     },
-                    "boxNumber": "10.1"
+                    "boxNumber": "9.1"
                 },
                 {
                     "answerPlace": "B",
                     "answerTextData": {
                         "answerText":"நீரைக் கொண்டு 'வுளு' செய்தல் "
                     },
-                    "boxNumber": "10.2"
+                    "boxNumber": "9.2"
                 },
                 {
                     "answerPlace": "C",
                     "answerTextData": {
                         "answerText":"தலைமுடியை வெட்டி நீரில் இடல் "
                     },
+                    "boxNumber": "9.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 10",
+            "questionTextData": {
+                "questionText":"இத் தையல் முறைக்கு வழங்கப்படும் பெயர் யாது?",
+                "largeImageProvider": "assets/question_and_answer_data/Environmental-education/image/10.jpg",
+                "isLargeImageAbove": false
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"சங்கிலித்தையல்"
+                    },
+                    "boxNumber": "10.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"கம்பளித்தையல்"
+                    },
+                    "boxNumber": "10.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"சோம் தையல்"
+                    },
                     "boxNumber": "10.3"
                 }
             ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 11",
+            "questionTextData": {
+                "questionText":"வரலாற்று முக்கியம் வாய்ந்த புனித நகர்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"அனுராதபுரம்"
+                    },
+                    "boxNumber": "11.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"கண்டி"
+                    },
+                    "boxNumber": "11.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"பொலநறுவை"
+                    },
+                    "boxNumber": "11.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 12",
+            "questionTextData": {
+                "questionText":"கழிச்சல் நோயை உண்டாக்கும் பிராணி."
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"எலி"
+                    },
+                    "boxNumber": "12.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"நுளம்பு"
+                    },
+                    "boxNumber": "12.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"ஈ"
+                    },
+                    "boxNumber": "12.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 13",
+            "questionTextData": {
+                "questionText":"காற்றின் மூலம் பரவலடையும் வித்து"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"காசித்தும்பை"
+                    },
+                    "boxNumber": "13.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"எண்ணெய்"
+                    },
+                    "boxNumber": "13.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"வெடிபலவன்"
+                    },
+                    "boxNumber": "13.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 14",
+            "questionTextData": {
+                "questionText":"'சூழல் நேய திரவம்' என அழைக்கப்படுவது எது"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"பெற்றோல்"
+                    },
+                    "boxNumber": "14.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"வேப்பெண்ணெய்"
+                    },
+                    "boxNumber": "14.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மண்ணெண்ணெய்"
+                    },
+                    "boxNumber": "14.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 15",
+            "questionTextData": {
+                "questionText":"தேவநம்பியதீசனால் கட்டப்பட்ட குளம்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":" திஸாவாவி"
+                    },
+                    "boxNumber": "15.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"அபயவாவி"
+                    },
+                    "boxNumber": "15.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"காமினி வாவி"
+                    },
+                    "boxNumber": "15.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 16",
+            "questionTextData": {
+                "questionText":"தீக்காயங்களை ஆற்ற பயன்படும் மூலிகை"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"கற்றாளை"
+                    },
+                    "boxNumber": "16.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"பொன்னாவரசு"
+                    },
+                    "boxNumber": "16.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"வேம்பு"
+                    },
+                    "boxNumber": "16.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 17",
+            "questionTextData": {
+                "questionText":"'நுகத்தடி' பயன்படுத்தப்படுவது"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"இரத்தினக்கல் அகழ்வு"
+                    },
+                    "boxNumber": "17.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மீன்பிடி"
+                    },
+                    "boxNumber": "17.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"விவசாயம்"
+                    },
+                    "boxNumber": "17.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 18",
+            "questionTextData": {
+                "questionText":"மூன்று இதழ்களைக் கொண்ட பூ"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"வெட்சி"
+                    },
+                    "boxNumber": "18.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"தென்னை"
+                    },
+                    "boxNumber": "18.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"அந்தூரியம்"
+                    },
+                    "boxNumber": "18.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 19",
+            "questionTextData": {
+                "questionText":"தொடர்பாடலுக்குப் பயன்படுத்தப்படும் இலத்திரனியல் ஊடகம்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"கடிதம்"
+                    },
+                    "boxNumber": "19.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மேடைப்பேச்சு"
+                    },
+                    "boxNumber": "19.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மின்னஞ்சல்"
+                    },
+                    "boxNumber": "19.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 20",
+            "questionTextData": {
+                "questionText":"படத்தில் காட்டப்படும் தாவர இலை.",
+                "largeImageProvider": "assets/question_and_answer_data/Environmental-education/image/20.jpg",
+                "isLargeImageAbove": false
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"புளியமர இலை"
+                    },
+                    "boxNumber": "20.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"ஆலமர இலை"
+                    },
+                    "boxNumber": "20.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"வேம்பு மர இலை"
+                    },
+                    "boxNumber": "20.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 21",
+            "questionTextData": {
+                "questionText":"மின்காந்தம் பயன்படுத்தப்படுவது"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"மின்மணி"
+                    },
+                    "boxNumber": "21.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"நீராவிப்படகு"
+                    },
+                    "boxNumber": "21.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"கட்டுமரம்"
+                    },
+                    "boxNumber": "21.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 22",
+            "questionTextData": {
+                "questionText":"நீரிழிவு நோயாளி தவிர்க்க வேண்டிய உணவு"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"மரவள்ளி"
+                    },
+                    "boxNumber": "22.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"கௌப்பி"
+                    },
+                    "boxNumber": "22.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"குரக்கன்"
+                    },
+                    "boxNumber": "22.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 23",
+            "questionTextData": {
+                "questionText":"'சூரிய கிரகணம்' ஏற்படுவது,"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"பௌர்ணமி தினத்தில்"
+                    },
+                    "boxNumber": "23.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"அட்டமி தினத்தில்"
+                    },
+                    "boxNumber": "23.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"அமாவாசை தினத்தில்"
+                    },
+                    "boxNumber": "23.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 24",
+            "questionTextData": {
+                "questionText":"சிவப்பு நிறத்தையும் நீலநிறத்தையும் சம அளவில் கலந்தால் கிடைப்பது,"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"ஊதா"
+                    },
+                    "boxNumber": "24.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"கபிலம்"
+                    },
+                    "boxNumber": "24.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"பச்சை"
+                    },
+                    "boxNumber": "24.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 25",
+            "questionTextData": {
+                "questionText":"உருவில் காட்டப்படும் பாதம் எதற்குரியது?",
+                "largeImageProvider": "assets/question_and_answer_data/Environmental-education/image/25.jpg",
+                "isLargeImageAbove": false
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"கோழி"
+                    },
+                    "boxNumber": "25.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"வாத்து"
+                    },
+                    "boxNumber": "25.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"சிவப்பு"
+                    },
+                    "boxNumber": "25.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 26",
+            "questionTextData": {
+                "questionText":"கிளைத்துண்டுகளை நடுவதன் மூலம் கன்றுகளைப் பெறக்கூடிய தாவரம்,"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"பலா"
+                    },
+                    "boxNumber": "26.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"கங்குன்"
+                    },
+                    "boxNumber": "26.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"பனை"
+                    },
+                    "boxNumber": "26.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 27",
+            "questionTextData": {
+                "questionText":"நீரில் வாழும் தாவரம்,"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"பன்னம்"
+                    },
+                    "boxNumber": "27.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மடுப்பனை"
+                    },
+                    "boxNumber": "27.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"ஐதரில்லா"
+                    },
+                    "boxNumber": "27.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 28",
+            "questionTextData": {
+                "questionText":"அரச இலச்சினையில் நிறைகுடம் குறிப்பது,"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"தன்னிறைவு"
+                    },
+                    "boxNumber": "28.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"சௌபாக்கியம்"
+                    },
+                    "boxNumber": "28.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"தார்மீகம்"
+                    },
+                    "boxNumber": "28.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 29",
+            "questionTextData": {
+                "questionText":"தேசப்படத்தில் பெருந்தெருக்களைக் குறிக்கப் பயன்படும் நிறம்,"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"மஞ்சள்"
+                    },
+                    "boxNumber": "29.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"ஊதா"
+                    },
+                    "boxNumber": "29.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"சிவப்பு"
+                    },
+                    "boxNumber": "29.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 30",
+            "questionTextData": {
+                "questionText":"கீழே காட்டப்படும் பறவை,",
+                "largeImageProvider": "assets/question_and_answer_data/Environmental-education/image/30.jpg",
+                "isLargeImageAbove": false
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"மீன்கொத்தி"
+                    },
+                    "boxNumber": "30.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மரங்கொத்தி"
+                    },
+                    "boxNumber": "30.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"கொக்கு"
+                    },
+                    "boxNumber": "30.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 31",
+            "questionTextData": {
+                "questionText":".இலங்கையின் தேசிய கீதத்திலுள்ள வரிகளின் எண்ணிக்கை"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"20 வரிகள்"
+                    },
+                    "boxNumber": "31.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"29 வரிகள்"
+                    },
+                    "boxNumber": "31.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"30 வரிகள்"
+                    },
+                    "boxNumber": "31.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 32",
+            "questionTextData": {
+                "questionText":"சூரிய நமஸ்காரத்தினை மேற்கொள்ள உகந்த நேரம் எது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"நண்பகல்"
+                    },
+                    "boxNumber": "32.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"காலைவேளை"
+                    },
+                    "boxNumber": "32.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"இரவு வேளை"
+                    },
+                    "boxNumber": "32.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 33",
+            "questionTextData": {
+                "questionText":"தியான பயிற்சியின் 2வது படிநிலையை குறிப்பது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"உடலைத்தளர்த்துதல்"
+                    },
+                    "boxNumber": "33.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மனவூறுதி"
+                    },
+                    "boxNumber": "33.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மனதை தளர்த்துதல்"
+                    },
+                    "boxNumber": "33.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 34",
+            "questionTextData": {
+                "questionText":"எமது நாட்டின் தேசிய கொடியில் பச்சை நிற கீலம் குறிப்பது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"முஸ்லீம்"
+                    },
+                    "boxNumber": "34.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"சிங்களவர்"
+                    },
+                    "boxNumber": "34.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"தமிழர்"
+                    },
+                    "boxNumber": "34.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 35",
+            "questionTextData": {
+                "questionText":"இலங்கைக்கே உரித்தான வண்ணத்துப்பூச்சி வகைகளின் எண்ணிக்கை"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"23"
+                    },
+                    "boxNumber": "35.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"64"
+                    },
+                    "boxNumber": "35.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"83"
+                    },
+                    "boxNumber": "35.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 36",
+            "questionTextData": {
+                "questionText":"'சீதேவியார் செங்கழுநீர்' தாவரம் பரவலடைவது"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"காற்றினால்"
+                    },
+                    "boxNumber": "36.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"விலங்கினால்"
+                    },
+                    "boxNumber": "36.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"வெடித்தல் மூலம்"
+                    },
+                    "boxNumber": "36.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 37",
+            "questionTextData": {
+                "questionText":"மிகச் சிறிய ஒலியையும் கேட்கும் திறனுடைய பிராணி எது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"புலி"
+                    },
+                    "boxNumber": "37.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"சிறுத்தை"
+                    },
+                    "boxNumber": "37.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மான்"
+                    },
+                    "boxNumber": "37.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 38",
+            "questionTextData": {
+                "questionText":"பாடசாலை ஆய்வு கூடத்தில் இருக்க வேண்டிய பொருள்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"திசைகாட்டி"
+                    },
+                    "boxNumber": "38.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"சுருதிப்பெட்டி"
+                    },
+                    "boxNumber": "38.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மண்வெட்டி"
+                    },
+                    "boxNumber": "38.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 39",
+            "questionTextData": {
+                "questionText":"இலத்திரனியல் கொடுக்கல் வாங்கல்களுக்கு பயன்படுவது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"நாணயத்தாள்"
+                    },
+                    "boxNumber": "39.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"காசோலை"
+                    },
+                    "boxNumber": "39.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"கடன்அட்டை"
+                    },
+                    "boxNumber": "39.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 40",
+            "questionTextData": {
+                "questionText":"திறந்து வைத்து சமைக்க வேண்டிய பொருள்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"மரவள்ளி"
+                    },
+                    "boxNumber": "40.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மீன்"
+                    },
+                    "boxNumber": "40.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":" கடலை"
+                    },
+                    "boxNumber": "40.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 41",
+            "questionTextData": {
+                "questionText":"புரதக் குறைபாட்டினால் ஏற்படக்கூடிய நோய்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"குவாசியக்கோர்"
+                    },
+                    "boxNumber": "41.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மரஸ்மஸ்"
+                    },
+                    "boxNumber": "41.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":" மாலைக்கண்"
+                    },
+                    "boxNumber": "41.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 42",
+            "questionTextData": {
+                "questionText":"பின்வருவனற்றுள் தொற்றா நோயாக அமைவது"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"நீரிழிவு"
+                    },
+                    "boxNumber": "42.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"டெங்கு"
+                    },
+                    "boxNumber": "42.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"காசநோய்"
+                    },
+                    "boxNumber": "42.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 43",
+            "questionTextData": {
+                "questionText":"எந் எந் நீரினுள் பனிக்கட்டியினை இடும் போது விரைவாக உருகும்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"குளிர் நீர்"
+                    },
+                    "boxNumber": "43.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"சுடுநீர்"
+                    },
+                    "boxNumber": "43.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மழைநீர்"
+                    },
+                    "boxNumber": "43.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 44",
+            "questionTextData": {
+                "questionText":"ஆழமான கிணற்றில் இருந்து நீரை எடுப்பதற்கு பயன்படுத்தும் எளிய பொறி"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"கப்பி"
+                    },
+                    "boxNumber": "44.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"பற்சில்லு"
+                    },
+                    "boxNumber": "44.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"திருகி"
+                    },
+                    "boxNumber": "44.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 45",
+            "questionTextData": {
+                "questionText":"நீராவியால் அவித்து தயாரிக்கப்படும் உணவுப் பொருள்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"அப்பம்"
+                    },
+                    "boxNumber": "45.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"இடியப்பம்"
+                    },
+                    "boxNumber": "45.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"ரொட்டி"
+                    },
+                    "boxNumber": "45.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 46",
+            "questionTextData": {
+                "questionText":"வடக்கு சப்ரகமுவ,ஊவா என்பவை இலங்கையின் வடக்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"மூன்று மாவட்டங்கள்"
+                    },
+                    "boxNumber": "46.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"மூன்று மாகாணங்கள்"
+                    },
+                    "boxNumber": "46.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"மூன்று நகரங்கள்"
+                    },
+                    "boxNumber": "46.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 47",
+            "questionTextData": {
+                "questionText":"தானிய பயிர் வகைக்குரிய பருப்புக்கு பதிலாக பயன்படுத்தக்கூடிய உணவு"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"வற்றாளை"
+                    },
+                    "boxNumber": "47.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"பயறு"
+                    },
+                    "boxNumber": "47.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"பூசனிக்காய்"
+                    },
+                    "boxNumber": "47.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 48",
+            "questionTextData": {
+                "questionText":"எப்பாவனைப் பொருளை பாவிப்பதனால் ஏற்படும் பாதிப்பை அதன் முன் பக்கத்தில் வெளிப்படுத்தி விற்பனை ஆகின்றது?"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"உலர் உணவு"
+                    },
+                    "boxNumber": "48.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"புகைத்தல் பொருட்கள்"
+                    },
+                    "boxNumber": "48.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"சீனி அதிகம் கொண்ட உணவு"
+                    },
+                    "boxNumber": "48.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 49",
+            "questionTextData": {
+                "questionText":"தரப்பட்டுள்ள உருவில் 'கினித்துல்' என குறிப்பிடப்படுவது"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "mediumImageProvider": "assets/question_and_answer_data/Environmental-education/image/49_1.jpg"
+                    },
+                    "boxNumber": "49.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "mediumImageProvider": "assets/question_and_answer_data/Environmental-education/image/49_2.jpg"
+                    },
+                    "boxNumber": "49.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "mediumImageProvider": "assets/question_and_answer_data/Environmental-education/image/49_3.jpg"
+                    },
+                    "boxNumber": "49.3"
+                }
+            ]
+        },
+        {
+            "questionTitle": "வினா இலக்கம்: 50",
+            "questionTextData": {
+                "questionText":" நீர் வாழ் தாவரம்"
+            },
+                "answerOptions": [
+                {
+                    "answerPlace": "A",
+                    "answerTextData": {
+                        "answerText":"ஊதுபூ"
+                    },
+                    "boxNumber": "50.1"
+                },
+                {
+                    "answerPlace": "B",
+                    "answerTextData": {
+                        "answerText":"பன்னம்"
+                    },
+                    "boxNumber": "50.2"
+                },
+                {
+                    "answerPlace": "C",
+                    "answerTextData": {
+                        "answerText":"ஐதரில்லா"
+                    },
+                    "boxNumber": "50.3"
+                }
+            ]
         }
+        
     ]
 }
