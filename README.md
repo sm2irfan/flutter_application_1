@@ -1,4 +1,4 @@
-# flutter_application_1
+# mcqapp
 
 A new Flutter project.
 

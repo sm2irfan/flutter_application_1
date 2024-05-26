@@ -1,4 +1,4 @@
-name: flutter_application_1
+name: mcqapp
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -36,6 +36,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  path: ^1.8.0
 
 dev_dependencies:
   flutter_test:
@@ -63,9 +64,11 @@ flutter:
   assets:
       - assets/question_and_answer_data/
       - assets/images/
-      - assets/images/question1/
+      # - assets/images/question1/
       - assets/question_and_answer_data/Environmental-education/
       - assets/question_and_answer_data/Environmental-education/image/
+      - assets/question_and_answer_data/Environmental-education-two/
+      - assets/question_and_answer_data/Environmental-education-two/image/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

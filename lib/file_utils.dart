@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:convert';
 import 'dart:developer' as developer;
+import 'package:path/path.dart' as path;
 
 class FileUtils {
   // static count variable
@@ -28,60 +29,83 @@ class FileUtils {
   }
 
   static Future<List<String>> listFilesInDirectory() async {
-    developer.log('Starting listFilesInDirectory function');
-
     // Get the external storage directory
-    final directory = await getExternalStorageDirectory();
+    final externalStorageDirectory = await getExternalStorageDirectory();
 
-    if (directory == null) {
-      developer.log("External storage directory not found.");
+    if (externalStorageDirectory == null) {
+      developer.log("listFilesInDirectory Function: Unable to get external storage directory");
       return [];
     }
 
-    final List<FileSystemEntity> files = directory.listSync();
-    List<String> filePaths = [];
-    filePaths = files
-        .map((file) => file.path)
-        .where((path) => !path.contains('_answer'))
-        .toList();
+    // Define the subdirectory path
+    const questionFolderName = 'assets/question_and_answer_data';
+    final targetDirectoryPath = path.join(externalStorageDirectory.path, questionFolderName);
 
-    for (var element in filePaths) {
-      developer.log('File path to get the exam papers: $element');
+    // Ensure the directory exists
+    final targetDirectory = Directory(targetDirectoryPath);
+    if (!await targetDirectory.exists()) {
+      developer.log("listFilesInDirectory Function: Target directory does not exist: $targetDirectoryPath");
+      return [];
     }
 
-    developer.log('listFilesInDirectory function completed');
+    // List all entities in the target directory
+    final entities = targetDirectory.listSync();
 
-    return filePaths;
+    final List<String> folderPaths = entities.whereType<Directory>().map((directory) => directory.path).toList();
+    final List<String> filePaths = entities.whereType<File>().map((file) => file.path).toList();
+
+    developer.log("listFilesInDirectory Function: listFilesInDirectory: folderPaths: $folderPaths");
+    developer.log("listFilesInDirectory Function: listFilesInDirectory: filePaths: $filePaths");
+
+    // Recursively get files from folders
+    final List<String> allFilePaths = filePaths;
+    for (String folderPath in folderPaths) {
+      final folder = Directory(folderPath);
+      final folderEntities = folder.listSync();
+      final folderFilePaths = folderEntities.whereType<File>().map((file) => file.path).toList();
+      allFilePaths.addAll(folderFilePaths);
+    }
+
+    developer.log("listFilesInDirectory Function:: allFilePaths: $allFilePaths");
+
+    return allFilePaths;
   }
+
 
   static Future<String> copyAssetFileToExternalIfNotExists(
       String assetPath) async {
-    // Request storage permission
-    await Permission.storage.request();
+    try {
+      final externalStorageDirectory = await getExternalStorageDirectory();
+      if (externalStorageDirectory == null) {
+        throw Exception("copyAssetFileToExternalIfNotExists Function: Unable to get external storage directory");
+      }
 
-    // Get the external storage directory
-    final directory = await getExternalStorageDirectory();
+      final externalFilePath = path.join(externalStorageDirectory.path, assetPath);
+      final externalFile = File(externalFilePath);
 
-    // Create a new file path in the external storage directory
-    final String filePath = '${directory!.path}/${assetPath.split('/').last}';
+      // Create the directory structure if it doesn't exist
+      final directoryPath = path.dirname(externalFilePath);
+      await Directory(directoryPath).create(recursive: true);
 
-    // Check if the file already exists
-    final File copiedFile = File(filePath);
-    if (await copiedFile.exists()) {
-      developer.log("File already exists at: $filePath");
-      return filePath;
+      // Check if the file already exists
+      if (await externalFile.exists()) {
+        developer.log("copyAssetFileToExternalIfNotExists Function: file already exists: $externalFilePath");
+        return externalFilePath;
+      }
+
+      // Read the asset file
+      final assetData = await rootBundle.load(assetPath);
+
+      // Write the asset data to the external file
+      await externalFile.writeAsBytes(assetData.buffer.asUint8List(), flush: true);
+      developer.log("copyAssetFileToExternalIfNotExists Function: file written to external directory: $externalFilePath");
+      return externalFilePath;
+    } catch (e) {
+      developer.log("copyAssetFileToExternalIfNotExists Function: error: $e");
+      return Future.error(e);
     }
-
-    // Read the asset file
-    final assetData = await rootBundle.load(assetPath);
-
-    // Write the asset data to the external file
-    await copiedFile.writeAsBytes(assetData.buffer.asUint8List(), flush: true);
-
-    developer.log("External file copied to: $filePath");
-
-    return filePath;
   }
+
 
   static Future<List<String>> getAssetsFileNames(String folderPath) async {
     final manifestContent = await rootBundle.loadString('AssetManifest.json');

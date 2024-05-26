@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/widgets/answer_option.dart';
-import 'package:flutter_application_1/widgets/question_text.dart';
-import 'single_question_answer_set.dart';
 import 'dart:developer' as developer;
+import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:mcqapp/widgets/answer_option.dart';
+import 'package:mcqapp/widgets/question_text.dart';
+import 'single_question_answer_set.dart';
+
+var isImagePathFromAsset = false;
 
 List<dynamic> parseQuestionAnswerSets(Map<String, dynamic> jsonData) {
   try {
@@ -51,11 +54,14 @@ QuestionTextData _parseQuestionTextData(Map<String, dynamic> questionTextJson) {
 
   return QuestionTextData(
     questionText: quesText,
-    smallImageProvider: imagePath != null ? AssetImage(imagePath) : null,
+    smallImageProvider: imagePath != null
+        ? (isImagePathFromAsset ? AssetImage(imagePath) as ImageProvider<Object> : FileImage(File(imagePath)) as ImageProvider<Object>)
+        : null,
     smallImageIndex: questionTextJson['smallImageIndex'] as int?,
     isLargeImageAbove: isLargePicAbove,
-    largeImageProvider:
-        largeImagePath != null ? AssetImage(largeImagePath) : null,
+    largeImageProvider: largeImagePath != null
+        ? (isImagePathFromAsset ? AssetImage(largeImagePath) as ImageProvider<Object> : FileImage(File(largeImagePath)) as ImageProvider<Object>)
+        : null,
   );
 }
 
@@ -73,10 +79,14 @@ AnswerTextData _parseAnswerTextData(Map<String, dynamic> answerTextData) {
   return AnswerTextData(
     answerText: answerTextData['answerText'] as String?,
     mediumImageProvider: answerTextData['mediumImageProvider'] != null
-        ? AssetImage(answerTextData['mediumImageProvider'] as String)
+        ? (isImagePathFromAsset
+            ? AssetImage(answerTextData['mediumImageProvider'] as String) as ImageProvider<Object>
+            : FileImage(File(answerTextData['mediumImageProvider'] as String)) as ImageProvider<Object>)
         : null,
     smallImageProvider: answerTextData['smallImageProvider'] != null
-        ? AssetImage(answerTextData['smallImageProvider'] as String)
+        ? (isImagePathFromAsset
+            ? AssetImage(answerTextData['smallImageProvider'] as String) as ImageProvider<Object>
+            : FileImage(File(answerTextData['smallImageProvider'] as String)) as ImageProvider<Object>)
         : null,
     smallImageIndex: answerTextData['smallImageIndex'] as int?,
   );
