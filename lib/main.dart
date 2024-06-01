@@ -6,8 +6,10 @@ import 'data_loader.dart'; // Import the data loader
 import 'exam_paper.dart';
 import 'single_question_answer_set.dart';
 import 'dart:developer' as developer;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 Future<void> main() async {
+  await dotenv.load(fileName: ".env");
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
@@ -45,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late bool isLoading = false;
   late List<String> externalStorageFiles = [];
   late String externalFilePath;
+  bool isTestingRun = dotenv.env['isTestingRun']?.toLowerCase() == 'true';
 
   @override
   void initState() {
@@ -55,6 +58,11 @@ class _MyHomePageState extends State<MyHomePage> {
   // the listFilesInDirectory method is being called indirectly
   // through the FutureBuilder widget in the build method.
   Future<List<String>> listFilesInDirectory() async {
+    if (isTestingRun) {
+      final List<String> externalFiles =
+      await FileUtils.testDateListFilesInDirectory();
+      return externalFiles.where((file) => file.contains('/data.json')).toList();
+    }
     final List<String> externalFiles = await FileUtils.listFilesInDirectory();
 
     if (externalFiles.isEmpty) {
@@ -64,10 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     developer.log('listFilesInDirectory Function: External files: $externalFiles');
-    return externalFiles.where((file) => file.contains('/data.json')).toList();
+    return externalFiles.where((file) => file.contains('/data.json')).toList();  
+    
   }
 
-// I cleaned up the code by standardizing variable names, removing debugging statements, improving readability, and more. The code is now easier to understand and maintain.
 
   Future<List<String>> getAssetsFileNamesAndCopy() async {
     developer.log('from getAssetsFileNamesAndCopy');

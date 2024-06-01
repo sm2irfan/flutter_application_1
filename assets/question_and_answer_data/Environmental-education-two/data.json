@@ -120,7 +120,7 @@
             "questionTitle": "வினா இலக்கம்: 5",
             "questionTextData": {
                 "questionText":"இக்குறியீடு குறித்து நிற்பது?",
-                "largeImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/5.jpg",
+                "largeImageProvider": "Environmental-education-two/image/5.jpg",
                 "isLargeImageAbove": false
             },
             "answerOptions": [
@@ -267,7 +267,7 @@
             "questionTitle": "வினா இலக்கம்: 10",
             "questionTextData": {
                 "questionText":"இத் தையல் முறைக்கு வழங்கப்படும் பெயர் யாது?",
-                "largeImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/10.jpg",
+                "largeImageProvider": "Environmental-education-two/image/10.jpg",
                 "isLargeImageAbove": false
             },
                 "answerOptions": [
@@ -559,7 +559,7 @@
             "questionTitle": "வினா இலக்கம்: 20",
             "questionTextData": {
                 "questionText":"படத்தில் காட்டப்படும் தாவர இலை.",
-                "largeImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/20.jpg",
+                "largeImageProvider": "Environmental-education-two/image/20.jpg",
                 "isLargeImageAbove": false
             },
                 "answerOptions": [
@@ -706,7 +706,7 @@
             "questionTitle": "வினா இலக்கம்: 25",
             "questionTextData": {
                 "questionText":"உருவில் காட்டப்படும் பாதம் எதற்குரியது?",
-                "largeImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/25.jpg",
+                "largeImageProvider": "Environmental-education-two/image/25.jpg",
                 "isLargeImageAbove": false
             },
                 "answerOptions": [
@@ -853,7 +853,7 @@
             "questionTitle": "வினா இலக்கம்: 30",
             "questionTextData": {
                 "questionText":"கீழே காட்டப்படும் பறவை,",
-                "largeImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/30.jpg",
+                "largeImageProvider": "Environmental-education-two/image/30.jpg",
                 "isLargeImageAbove": false
             },
                 "answerOptions": [
@@ -1411,21 +1411,21 @@
                 {
                     "answerPlace": "A",
                     "answerTextData": {
-                        "mediumImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/49_1.jpg"
+                        "mediumImageProvider": "Environmental-education-two/image/49_1.jpg"
                     },
                     "boxNumber": "49.1"
                 },
                 {
                     "answerPlace": "B",
                     "answerTextData": {
-                        "mediumImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/49_2.jpg"
+                        "mediumImageProvider": "Environmental-education-two/image/49_2.jpg"
                     },
                     "boxNumber": "49.2"
                 },
                 {
                     "answerPlace": "C",
                     "answerTextData": {
-                        "mediumImageProvider": "/storage/emulated/0/Android/data/com.irfanithaar.mcqapp/files/assets/question_and_answer_data/Environmental-education/image/49_3.jpg"
+                        "mediumImageProvider": "Environmental-education-two/image/49_3.jpg"
                     },
                     "boxNumber": "49.3"
                 }

@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   path: ^1.8.0
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -64,11 +65,17 @@ flutter:
   assets:
       - assets/question_and_answer_data/
       - assets/images/
-      # - assets/images/question1/
+      - assets/assets_test/
+      - assets/assets_test/test1/
+      - assets/assets_test/test1/image/
+      - assets/assets_test/test2/
+      - assets/assets_test/test2/image/
+      - assets/images/question1/
       - assets/question_and_answer_data/Environmental-education/
       - assets/question_and_answer_data/Environmental-education/image/
       - assets/question_and_answer_data/Environmental-education-two/
       - assets/question_and_answer_data/Environmental-education-two/image/
+      - .env
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
