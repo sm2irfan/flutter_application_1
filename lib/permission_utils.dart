@@ -15,7 +15,9 @@ class PermissionUtils {
       return true;
     } else if (permissionStatus.isPermanentlyDenied) {
       developer.log("Storage permission permanently denied");
-      showPermissionDialog(context);
+      if (context.mounted) {
+        showPermissionDialog(context);
+      }
       return false;
     } else {
       developer.log("Storage permission denied");
@@ -30,7 +32,8 @@ class PermissionUtils {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Storage Permission Required'),
-          content: const Text('This app requires storage access to function properly. Please enable storage permission in the app settings.'),
+          content: const Text(
+              'This app requires storage access to function properly. Please enable storage permission in the app settings.'),
           actions: <Widget>[
             TextButton(
               onPressed: () {

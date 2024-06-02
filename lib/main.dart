@@ -91,7 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
   // Load the data asynchronously
   Future<void> _loadData(String asset) async {
     developer.log('Starting _loadData function for asset: $asset');
-    final currentContext = context;
     setState(() {
       isLoading = true;
     });
@@ -113,7 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
         questionAnswerSetDataList: questionAnswerSetDataList,
       ),
     );
-    Navigator.push(currentContext, route);
+    if (Navigator.of(context).mounted) {
+      Navigator.push(context, route);
+    }
     developer.log('Navigation to QuestionGround screen completed');
   }
 
