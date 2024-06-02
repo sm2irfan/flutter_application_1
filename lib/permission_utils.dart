@@ -29,8 +29,8 @@ class PermissionUtils {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Storage Permission Required'),
-          content: Text('This app requires storage access to function properly. Please enable storage permission in the app settings.'),
+          title: const Text('Storage Permission Required'),
+          content: const Text('This app requires storage access to function properly. Please enable storage permission in the app settings.'),
           actions: <Widget>[
             TextButton(
               onPressed: () {
@@ -38,13 +38,13 @@ class PermissionUtils {
                 developer.log("Opening app settings...");
                 openAppSettings();
               },
-              child: Text('Open Settings'),
+              child: const Text('Open Settings'),
             ),
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
           ],
         );
